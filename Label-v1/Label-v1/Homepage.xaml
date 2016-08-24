@@ -44,6 +44,15 @@
                         <Setter Target="FootwearButton.(Grid.Column)" Value="2" />
                         <Setter Target="ExamButton.(Grid.Column)" Value="3"/>
 
+                        <Setter Target="SavedLabelButton.(Grid.Column)" Value="3"/>
+                        <Setter Target="SavedLabelButton.VerticalAlignment" Value="Top"/>
+                        <Setter Target="SavedLabelButton.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="SavedLabelButton.Margin" Value="0,20,20,0"/>
+
+                        <Setter Target="AboutButton.(Grid.Column)" Value="3"/>
+                        <Setter Target="AboutButton.VerticalAlignment" Value="Bottom"/>
+                        <Setter Target="AboutButton.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="AboutButton.Margin" Value="0,0,20,20"/>
                     </VisualState.Setters>
                 </VisualState>
 
