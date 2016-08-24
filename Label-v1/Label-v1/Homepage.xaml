@@ -8,7 +8,85 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="FirstColumn" Width="*"/>
+            <ColumnDefinition x:Name="SecondColumn" Width="*"/>
+            <ColumnDefinition x:Name="ThirdColumn" Width="*"/>
+            <ColumnDefinition x:Name="FourthColumn" Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="FirstRow" Height="*"/>
+            <RowDefinition x:Name="SecondRow" Height="*"/>
+            <RowDefinition x:Name="ThirdRow" Height="*"/>
+            <RowDefinition x:Name="FourthRow" Height="*"/>
+            <RowDefinition x:Name="FifthRow" Height="*"/>
+        </Grid.RowDefinitions>
         
+            <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SecondRow.Height" Value="0" />
+                        <Setter Target="ThirdRow.Height" Value="0" />
+                        <Setter Target="FourthRow.Height" Value="0" />
+                        <Setter Target="FifthRow.Height" Value="0" />
+
+                        <Setter Target="TextileButton.(Grid.Row)" Value="0"/>
+                        <Setter Target="FoodButton.(Grid.Row)" Value="0"/>
+                        <Setter Target="FootwearButton.(Grid.Row)" Value="0" />
+                        <Setter Target="ExamButton.(Grid.Row)" Value="0"/>
+
+                        <Setter Target="TextileButton.(Grid.Column)" Value="0"/>
+                        <Setter Target="FoodButton.(Grid.Column)" Value="1"/>
+                        <Setter Target="FootwearButton.(Grid.Column)" Value="2" />
+                        <Setter Target="ExamButton.(Grid.Column)" Value="3"/>
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FirstRow.Height" Value="40"/>
+                        <Setter Target="SecondColumn.Width" Value="0"/>
+                        <Setter Target="ThirdColumn.Width" Value="0"/>
+                        <Setter Target="FourthColumn.Width" Value="0"/>
+
+                        <Setter Target="TextileButton.(Grid.Row)" Value="1"/>
+                        <Setter Target="FoodButton.(Grid.Row)" Value="2"/>
+                        <Setter Target="FootwearButton.(Grid.Row)" Value="3" />
+                        <Setter Target="ExamButton.(Grid.Row)" Value="4"/>
+
+                        <Setter Target="TextileButton.(Grid.Column)" Value="0"/>
+                        <Setter Target="FoodButton.(Grid.Column)" Value="0"/>
+                        <Setter Target="FootwearButton.(Grid.Column)" Value="0" />
+                        <Setter Target="ExamButton.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="SavedLabelButton.(Grid.Row)" Value="0"/>
+                        <Setter Target="SavedLabelButton.HorizontalAlignment" Value="Right"/>
+                        <Setter Target="SavedLabelButton.VerticalAlignment" Value="Center" />
+                        <Setter Target="SavedLabelButton.Margin" Value="5,0,0,0"/>
+
+                        <Setter Target="AboutButton.(Grid.Row)" Value="0"/>
+                        <Setter Target="AboutButton.HorizontalAlignment" Value="Left"/>
+                        <Setter Target="AboutButton.VerticalAlignment" Value="Center"/>
+                        <Setter Target="AboutButton.Margin" Value="0,0,5,0" />
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <Button Name="TextileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="50"/>
+        <Button Name="FoodButton"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="100"/>
+        <Button Name="FootwearButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="150"/>
+        <Button Name="ExamButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="200"/>
+
+        <Button Name="SavedLabelButton" Width="35" Height="35"/>
+        <Button Name="AboutButton" Width="35" Height="35"/>
     </Grid>
 </Page>
