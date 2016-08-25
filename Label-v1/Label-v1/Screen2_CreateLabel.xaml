@@ -10,11 +10,13 @@
     <Page.Resources>
         <Style TargetType="TextBlock" x:Name="TextBlockSettings">
             <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style TargetType="TextBox" x:Name="TextBoxSettings">
             <Setter Property="Margin" Value="0,7,7,0"/>
             <Setter Property="TextAlignment" Value="Left"/>
             <Setter Property="Height" Value="32"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style TargetType="Button" x:Name="ButtonsSettings">
             <Setter Property="Margin" Value="0,7,7,0"/>
@@ -24,7 +26,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#0063B1">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
@@ -80,13 +82,15 @@
             <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,-218">
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
+                        
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Style="{StaticResource TextBlockSettings}" />
-                        <Slider StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
+                        <Slider Foreground="Black" Background="White" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                        <TextBlock Foreground="White" Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
                         <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
-                        <Slider StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0"/>
+                        <Slider Foreground="Black" Background="White" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                        <TextBlock Foreground="White" Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0"/>
+                        
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -105,7 +109,7 @@
                                 <TextBlock Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Orientation="Vertical">
-                                <ComboBox Name="NumberOfLinesComboBox" Margin="0,2,0,0"  HorizontalAlignment="Right" />
+                                <ComboBox Name="NumberOfLinesComboBox" Height="25" HorizontalAlignment="Right"/>
                                 <Button Name="Button1" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button2" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button3" Style="{StaticResource ButtonsSettings}"/>
