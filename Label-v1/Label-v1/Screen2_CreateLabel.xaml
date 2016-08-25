@@ -7,6 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Name="TextBlockSettings">
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="TextBoxSettings">
+            <Setter Property="Margin" Value="0,7,7,0"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+        <Style TargetType="Button" x:Name="ButtonsSettings">
+            <Setter Property="Margin" Value="0,7,7,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="30" />
+        </Style>
+    </Page.Resources>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -25,6 +42,7 @@
                         <Setter Target="CreateLabelGridPreview.(Grid.Column)" Value="1"/>
                         <Setter Target="CreateLabelPreviewColumn.Width" Value="0.7*" />
                         <Setter Target="CreateLabelSettingsRow.Height" Value="0" />
+                        <Setter Target="NumberOfLinesComboBox.Width" Value="150"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Phone">
@@ -32,12 +50,13 @@
                         <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ColumnAndRowStack.Margin" Value="20"/>
+                        <Setter Target="ColumnAndRowStack.Margin" Value="10"/>
                         <Setter Target="CreateLabelGridPreview.(Grid.Row)" Value="0"/>
                         <Setter Target="CreateLabelGridSettings.(Grid.Row)" Value="1"/>
                         <Setter Target="CreateLabelPreviewColumn.Width" Value="0"/>
                         <Setter Target="CreateLabelSettingsRow.Height" Value="1.7*"/>
                         <Setter Target="GridRowsTextBlocks.Margin" Value="5"/>
+                        <Setter Target="NumberOfLinesComboBox.Width" Value="100"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -55,21 +74,46 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition x:Name="CreateLabelSettingsRow" Height="*"/>
             </Grid.RowDefinitions>
-            <Grid Name="CreateLabelGridPreview" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                
+            <Grid Name="CreateLabelGridPreview" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="150">
+
             </Grid>
             <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
-                        <TextBlock Name="GridRowsTextBlocks" Text="Rows" FontSize="25" />
+                        <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Style="{StaticResource TextBlockSettings}" />
                         <Slider StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
-                        <TextBlock Name="GridCloumnsTextBlocks" Text="Columns" FontSize="25" />
+                        <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
                         <Slider StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.8*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Vertical" Grid.Row="0">
+                                <TextBlock Text="Lines:" Style="{StaticResource TextBlockSettings}"/>
+                                <TextBox Name="Textbox1" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox2" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox3" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox4" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox5" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox6" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox7" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <ComboBox Name="NumberOfLinesComboBox" HorizontalAlignment="Right" />
+                                <Button Name="Button1" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="Button2" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="Button3" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="Button4" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="Button5" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="Button6" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="Button7" Style="{StaticResource ButtonsSettings}"/>
+                            </StackPanel>
+                        </Grid>
                     </StackPanel>
-                    
                 </ScrollViewer>
             </Grid>
         </Grid>

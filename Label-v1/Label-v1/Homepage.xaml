@@ -24,9 +24,9 @@
         
             <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="Desktop">
+                <VisualState x:Name="Landscape">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="800"/>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="SecondRow.Height" Value="0" />
@@ -56,92 +56,11 @@
                     </VisualState.Setters>
                 </VisualState>
 
-
-                <VisualState x:Name="Tablet-Portrait-(Phone)">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="600"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="FirstRow.Height" Value="40"/>
-                        <Setter Target="SecondColumn.Width" Value="0"/>
-                        <Setter Target="ThirdColumn.Width" Value="0"/>
-                        <Setter Target="FourthColumn.Width" Value="0"/>
-
-                        <Setter Target="TextileButton.(Grid.Row)" Value="1"/>
-                        <Setter Target="FoodButton.(Grid.Row)" Value="2"/>
-                        <Setter Target="FootwearButton.(Grid.Row)" Value="3" />
-                        <Setter Target="ExamButton.(Grid.Row)" Value="4"/>
-
-                        <Setter Target="TextileButton.(Grid.Column)" Value="0"/>
-                        <Setter Target="FoodButton.(Grid.Column)" Value="0"/>
-                        <Setter Target="FootwearButton.(Grid.Column)" Value="0" />
-                        <Setter Target="ExamButton.(Grid.Column)" Value="0"/>
-
-                        <Setter Target="SavedLabelButton.(Grid.Row)" Value="0"/>
-                        <Setter Target="SavedLabelButton.HorizontalAlignment" Value="Right"/>
-                        <Setter Target="SavedLabelButton.VerticalAlignment" Value="Center" />
-                        <Setter Target="SavedLabelButton.Margin" Value="5,0,0,0"/>
-
-                        <Setter Target="AboutButton.(Grid.Row)" Value="0"/>
-                        <Setter Target="AboutButton.HorizontalAlignment" Value="Left"/>
-                        <Setter Target="AboutButton.VerticalAlignment" Value="Center"/>
-                        <Setter Target="AboutButton.Margin" Value="0,0,5,0" />
-
-                    </VisualState.Setters>
-                </VisualState>
-
-
-                <VisualState x:Name="Tablet-Landscape-(Desktop)">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="800"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="SecondRow.Height" Value="0" />
-                        <Setter Target="ThirdRow.Height" Value="0" />
-                        <Setter Target="FourthRow.Height" Value="0" />
-                        <Setter Target="FifthRow.Height" Value="0" />
-
-                        <Setter Target="TextileButton.(Grid.Row)" Value="0"/>
-                        <Setter Target="FoodButton.(Grid.Row)" Value="0"/>
-                        <Setter Target="FootwearButton.(Grid.Row)" Value="0" />
-                        <Setter Target="ExamButton.(Grid.Row)" Value="0"/>
-
-                        <Setter Target="TextileButton.(Grid.Column)" Value="0"/>
-                        <Setter Target="FoodButton.(Grid.Column)" Value="1"/>
-                        <Setter Target="FootwearButton.(Grid.Column)" Value="2" />
-                        <Setter Target="ExamButton.(Grid.Column)" Value="3"/>
-
-                    </VisualState.Setters>
-                </VisualState>
-
-
-                <VisualState x:Name="Phone-Landscape-(Desktop)">
+                <VisualState x:Name="Portrait">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="SecondRow.Height" Value="0" />
-                        <Setter Target="ThirdRow.Height" Value="0" />
-                        <Setter Target="FourthRow.Height" Value="0" />
-                        <Setter Target="FifthRow.Height" Value="0" />
-
-                        <Setter Target="TextileButton.(Grid.Row)" Value="0"/>
-                        <Setter Target="FoodButton.(Grid.Row)" Value="0"/>
-                        <Setter Target="FootwearButton.(Grid.Row)" Value="0" />
-                        <Setter Target="ExamButton.(Grid.Row)" Value="0"/>
-
-                        <Setter Target="TextileButton.(Grid.Column)" Value="0"/>
-                        <Setter Target="FoodButton.(Grid.Column)" Value="1"/>
-                        <Setter Target="FootwearButton.(Grid.Column)" Value="2" />
-                        <Setter Target="ExamButton.(Grid.Column)" Value="3"/>
-                    </VisualState.Setters>
-                </VisualState>
-
-                <VisualState x:Name="Phone-(Portrait)">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="300"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
                         <Setter Target="FirstRow.Height" Value="40"/>
                         <Setter Target="SecondColumn.Width" Value="0"/>
                         <Setter Target="ThirdColumn.Width" Value="0"/>
@@ -166,8 +85,7 @@
                         <Setter Target="AboutButton.HorizontalAlignment" Value="Left"/>
                         <Setter Target="AboutButton.VerticalAlignment" Value="Center"/>
                         <Setter Target="AboutButton.Margin" Value="0,0,5,0" />
-
-                    </VisualState.Setters>
+                   </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
