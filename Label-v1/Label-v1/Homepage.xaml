@@ -102,7 +102,7 @@
         <Button Name="FootwearButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="150"/>
         <Button Name="ExamButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="200"/>
 
-        <Button Name="SavedLabelButton" Width="35" Height="35"/>
-        <Button Name="AboutButton" Width="35" Height="35"/>
+        <Button Name="SavedLabelButton" Width="40" Height="40"/>
+        <Button Name="AboutButton" Width="40" Height="40"/>
     </Grid>
 </Page>

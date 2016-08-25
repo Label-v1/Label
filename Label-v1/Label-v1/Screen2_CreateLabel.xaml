@@ -86,7 +86,7 @@
 
                         <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
                         <Slider StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Text="0" TextAlignment="Center" FontSize="20"/>
+                        <TextBlock Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -101,9 +101,11 @@
                                 <TextBox Name="Textbox5" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
                                 <TextBox Name="Textbox6" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
                                 <TextBox Name="Textbox7" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBlock Text="Image:" Style="{StaticResource TextBlockSettings}"/>
+                                <TextBlock Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Orientation="Vertical">
-                                <ComboBox Name="NumberOfLinesComboBox"  HorizontalAlignment="Right" />
+                                <ComboBox Name="NumberOfLinesComboBox" Margin="0,2,0,0"  HorizontalAlignment="Right" />
                                 <Button Name="Button1" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button2" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button3" Style="{StaticResource ButtonsSettings}"/>
@@ -111,6 +113,8 @@
                                 <Button Name="Button5" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button6" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button7" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
