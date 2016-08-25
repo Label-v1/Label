@@ -103,7 +103,7 @@
                                 <TextBox Name="Textbox7" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Orientation="Vertical">
-                                <ComboBox Name="NumberOfLinesComboBox" Margin="0,2,0,0" HorizontalAlignment="Right" />
+                                <ComboBox Name="NumberOfLinesComboBox"  HorizontalAlignment="Right" />
                                 <Button Name="Button1" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button2" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button3" Style="{StaticResource ButtonsSettings}"/>
