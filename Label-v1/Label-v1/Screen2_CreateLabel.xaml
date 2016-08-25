@@ -62,7 +62,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button FontFamily="Segoe MDL2 Assets" Margin="5,0,0,0" Background="Transparent" Width="35" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Content="Back" Click="BackButtonClicked" Margin="5,0,0,0" Background="Transparent" Width="50" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </StackPanel>
 
         <Grid Name="CreateLabel" Grid.Row="1">

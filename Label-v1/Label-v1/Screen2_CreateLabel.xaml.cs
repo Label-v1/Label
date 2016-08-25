@@ -26,5 +26,12 @@ namespace Label_v1
         {
             this.InitializeComponent();
         }
+
+        private void BackButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack) {
+                Frame.GoBack();
+            }
+        }
     }
 }

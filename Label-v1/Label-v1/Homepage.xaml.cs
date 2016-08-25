@@ -26,5 +26,25 @@ namespace Label_v1
         {
             this.InitializeComponent();
         }
+
+        private void TextileButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Screen2_CreateLabel));
+        }
+
+        private void FoodButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Screen2_CreateLabel));
+        }
+
+        private void FootwearButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Screen2_CreateLabel));
+        }
+
+        private void ExamButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Screen2_CreateLabel));
+        }
     }
 }

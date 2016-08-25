@@ -96,11 +96,11 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
-        <Button Name="TextileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="50"/>
-        <Button Name="FoodButton"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="100"/>
-        <Button Name="FootwearButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="150"/>
-        <Button Name="ExamButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="200"/>
+
+        <Button Name="TextileButton" Click="TextileButtonClicked" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="50"/>
+        <Button Name="FoodButton" Click="FoodButtonClicked" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="100"/>
+        <Button Name="FootwearButton" Click="FootwearButtonClicked" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="150"/>
+        <Button Name="ExamButton" Click="ExamButtonClicked" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="200"/>
 
         <Button Name="SavedLabelButton" Width="40" Height="40"/>
         <Button Name="AboutButton" Width="40" Height="40"/>
