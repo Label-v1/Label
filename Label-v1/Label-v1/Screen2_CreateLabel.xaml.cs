@@ -37,7 +37,12 @@ namespace Label_v1
         {
 
         }
-        
+
+        private void closePopup(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void BackButtonClicked(object sender, RoutedEventArgs e)
         {
             if (Frame.CanGoBack) {

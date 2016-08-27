@@ -12,22 +12,27 @@
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Height" Value="33" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
         </Style>
         <Style TargetType="TextBox" x:Name="TextBoxSettings">
             <Setter Property="Margin" Value="10,10,10,0"/>
             <Setter Property="TextAlignment" Value="Left"/>
             <Setter Property="Height" Value="35"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style TargetType="Button" x:Name="ButtonsSettings">
             <Setter Property="Margin" Value="10,10,10,0"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="Height" Value="35"/>
-            <Setter Property="Width" Value="35" />
+            <Setter Property="Width" Value="37" />
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="16" />
         </Style>
     </Page.Resources>
 
-    <Grid Background="#4C4A4B">
+    <Grid Background="#FF2E2D2E">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition x:Name="MainRow1" Height="*"/>
@@ -98,7 +103,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="Back" Click="BackButtonClicked" Margin="5,0,0,0" Background="Transparent" Width="50" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Content="&#xE0A6;" FontFamily="Segoe MDL2 Assets" Click="BackButtonClicked" Margin="5,0,0,0" Background="Transparent" Style="{StaticResource ButtonsSettings}"/>
         </StackPanel>
 
         <Grid Name="CreateLabel" Grid.Row="1">
@@ -113,7 +118,7 @@
             <Grid Name="CreateLabelGridPreview" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="150">
 
             </Grid>
-            <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid BorderThickness="4" BorderBrush="Gray" Background="#FFFFD587" Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Style="{StaticResource TextBlockSettings}" />
@@ -138,8 +143,11 @@
                             </StackPanel>
                         </Grid>
                         <Grid>
-                            <Button Name="AddButton" Content="&#xE109;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Name="AddButton" Content="&#xE710;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
                             <Button Name="SubButton" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
+                        </Grid>
+                        <Grid>
+                            <Button Content="&#xE713;" FontFamily="Segoe MDL2 Assets" Style="{StaticResource ButtonsSettings}"/>
                         </Grid>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -152,14 +160,14 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0" Text="Image:" Style="{StaticResource TextBlockSettings}"/>
                             <TextBlock Grid.Column="0" Grid.Row="1" Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
-                            <Button Grid.Column="1" Grid.Row="0" Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
-                            <Button Grid.Column="1" Grid.Row="1" Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Content="&#xE12D;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="0" Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Content="&#xEC1B;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="1" Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
                         </Grid>
                        </StackPanel>
                 </ScrollViewer>
             </Grid>
             <Grid Name="PreviewGrid">
-                <Grid Name="PreviewLabelGrid" Background="White">
+                <Grid BorderThickness="2" BorderBrush="Gray" Name="PreviewLabelGrid" Background="White">
                     
                 </Grid>
             </Grid>
