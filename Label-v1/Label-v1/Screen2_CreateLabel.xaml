@@ -14,16 +14,16 @@
             <Setter Property="Height" Value="33" />
         </Style>
         <Style TargetType="TextBox" x:Name="TextBoxSettings">
-            <Setter Property="Margin" Value="0,7,7,0"/>
+            <Setter Property="Margin" Value="10,10,10,0"/>
             <Setter Property="TextAlignment" Value="Left"/>
-            <Setter Property="Height" Value="32"/>
+            <Setter Property="Height" Value="35"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style TargetType="Button" x:Name="ButtonsSettings">
-            <Setter Property="Margin" Value="0,7,7,0"/>
+            <Setter Property="Margin" Value="10,10,10,0"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="Height" Value="32"/>
-            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="35" />
         </Style>
     </Page.Resources>
 
@@ -45,7 +45,6 @@
                         <Setter Target="CreateLabelGridPreview.(Grid.Column)" Value="1"/>
                         <Setter Target="CreateLabelPreviewColumn.Width" Value="0.7*" />
                         <Setter Target="CreateLabelSettingsRow.Height" Value="0" />
-                        <Setter Target="NumberOfLinesComboBox.Width" Value="150"/>
                         <Setter Target="PreviewGrid.(Grid.Column)" Value="1"/>
                         <Setter Target="PreviewGrid.(Grid.Row)" Value="0"/>
 
@@ -60,6 +59,10 @@
                         <Setter Target="PreviewLabelGrid.MaxHeight" Value="470"/>
 
                         <Setter Target="MainRow1.MinHeight" Value="600"/>
+
+                        <Setter Target="StandardPopup.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Target="StandardPopup.VerticalAlignment" Value="Stretch"/>
+                        <Setter Target="StandardPopup.Margin" Value="100,70,100,70"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Phone">
@@ -74,7 +77,6 @@
                         <Setter Target="CreateLabelSettingsRow.Height" Value="1.7*"/>
                         <Setter Target="CreateLabelGridPreview.MinHeight" Value="230"/>
                         <Setter Target="GridRowsTextBlocks.Margin" Value="5"/>
-                        <Setter Target="NumberOfLinesComboBox.Width" Value="100"/>
                         <Setter Target="PreviewGrid.(Grid.Column)" Value="0"/>
                         <Setter Target="PreviewGrid.(Grid.Row)" Value="0"/>
 
@@ -87,6 +89,10 @@
 
                         <Setter Target="PreviewLabelGrid.MinHeight" Value="200"/>
                         <Setter Target="PreviewLabelGrid.MaxHeight" Value="250"/>
+
+                        <Setter Target="StandardPopup.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Target="StandardPopup.VerticalAlignment" Value="Stretch"/>
+                        <Setter Target="StandardPopup.Margin" Value="15,40,15,40"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -110,7 +116,6 @@
             <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
-                        
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Style="{StaticResource TextBlockSettings}" />
                         <Slider Value="0" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
@@ -118,14 +123,11 @@
                         <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
                         <Slider Value="0" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Foreground="White" Width="40" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0" Text="{Binding Value, ElementName=ColumnSlider}"/>
-                        
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="0.8*"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Orientation="Vertical" Grid.Row="0">
-                                <TextBlock Text="Lines:" Style="{StaticResource TextBlockSettings}"/>
                                 <TextBox Name="Textbox1" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
                                 <TextBox Name="Textbox2" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
                                 <TextBox Name="Textbox3" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
@@ -133,32 +135,27 @@
                                 <TextBox Name="Textbox5" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
                                 <TextBox Name="Textbox6" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
                                 <TextBox Name="Textbox7" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBlock Text="Image:" Style="{StaticResource TextBlockSettings}"/>
-                                <TextBlock Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
-                            </StackPanel>
-                            <StackPanel Grid.Column="1" Orientation="Vertical">
-                                <ComboBox Name="NumberOfLinesComboBox" Height="33" HorizontalAlignment="Right">
-                                    <ComboBoxItem Name="Combo0" Content="0" IsSelected="True"/>
-                                    <ComboBoxItem Name="Combo1" Content="1" />
-                                    <ComboBoxItem Name="Combo2" Content="2" />
-                                    <ComboBoxItem Name="Combo3" Content="3" />
-                                    <ComboBoxItem Name="Combo4" Content="4" />
-                                    <ComboBoxItem Name="Combo5" Content="5" />
-                                    <ComboBoxItem Name="Combo6" Content="6" />
-                                    <ComboBoxItem Name="Combo7" Content="7" />
-                                </ComboBox>
-                                <Button Name="Button1" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="Button2" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="Button3" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="Button4" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="Button5" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="Button6" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="Button7" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
-                                <Button Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
                             </StackPanel>
                         </Grid>
-                    </StackPanel>
+                        <Grid>
+                            <Button Name="AddButton" Content="&#xE109;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Name="SubButton" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Image:" Style="{StaticResource TextBlockSettings}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
+                            <Button Grid.Column="1" Grid.Row="0" Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Grid.Column="1" Grid.Row="1" Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
+                        </Grid>
+                       </StackPanel>
                 </ScrollViewer>
             </Grid>
             <Grid Name="PreviewGrid">
@@ -167,5 +164,15 @@
                 </Grid>
             </Grid>
         </Grid>
+        <Popup x:Name="StandardPopup">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="1">
+                <StackPanel Name="PopupStack" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Test Text"/>
+                    <Button Content="Close" Click="closePopup"/>
+                </StackPanel>
+            </Border>
+        </Popup>
     </Grid>
 </Page>
