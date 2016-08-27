@@ -61,7 +61,7 @@
                         <Setter Target="PreviewLabelGrid.MaxWidth" Value="600"/>
                        
                         <Setter Target="PreviewLabelGrid.MinHeight" Value="370"/>
-                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="470"/>
+                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="440"/>
 
                         <Setter Target="MainRow1.MinHeight" Value="600"/>
 
@@ -121,7 +121,8 @@
             <Grid BorderThickness="4" BorderBrush="Gray" Background="#FFFFD587" Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
-                        <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Style="{StaticResource TextBlockSettings}" />
+                        <TextBox PlaceholderText="Label Name" Style="{StaticResource TextBoxSettings}"/>
+                        <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
                         <Slider Value="0" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
