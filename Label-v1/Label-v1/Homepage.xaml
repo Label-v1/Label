@@ -102,7 +102,7 @@
         <Button Name="FootwearButton" Click="FootwearButtonClicked" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="150"/>
         <Button Name="ExamButton" Click="ExamButtonClicked" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="200"/>
 
-        <Button Name="SavedLabelButton" Width="40" Height="40"/>
-        <Button Name="AboutButton" Width="40" Height="40"/>
+        <Button Name="SavedLabelButton" Width="40" Height="40" ToolTipService.ToolTip="Go to saved labels"/>
+        <Button Name="AboutButton" Width="40" Height="40" ToolTipService.ToolTip="Check about the Company"/>
     </Grid>
 </Page>
