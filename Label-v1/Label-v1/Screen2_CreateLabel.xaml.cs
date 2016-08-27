@@ -22,9 +22,20 @@ namespace Label_v1
     /// </summary>
     public sealed partial class Screen2_CreateLabel : Page
     {
+        double Rows, Column;
         public Screen2_CreateLabel()
         {
             this.InitializeComponent();
+        }
+
+        private void RowValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            
+        }
+
+        private void ColumnValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
         }
 
         private void BackButtonClicked(object sender, RoutedEventArgs e)

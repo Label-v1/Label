@@ -11,6 +11,7 @@
         <Style TargetType="TextBlock" x:Name="TextBlockSettings">
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="33" />
         </Style>
         <Style TargetType="TextBox" x:Name="TextBoxSettings">
             <Setter Property="Margin" Value="0,7,7,0"/>
@@ -26,10 +27,10 @@
         </Style>
     </Page.Resources>
 
-    <Grid Background="#0063B1">
+    <Grid Background="#4C4A4B">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="MainRow1" Height="*"/>
         </Grid.RowDefinitions>
 
         <VisualStateManager.VisualStateGroups>
@@ -45,6 +46,20 @@
                         <Setter Target="CreateLabelPreviewColumn.Width" Value="0.7*" />
                         <Setter Target="CreateLabelSettingsRow.Height" Value="0" />
                         <Setter Target="NumberOfLinesComboBox.Width" Value="150"/>
+                        <Setter Target="PreviewGrid.(Grid.Column)" Value="1"/>
+                        <Setter Target="PreviewGrid.(Grid.Row)" Value="0"/>
+
+                        <Setter Target="PreviewLabelGrid.HorizontalAlignment" Value="Center"/>
+                        <Setter Target="PreviewLabelGrid.VerticalAlignment" Value="Top" />
+                        <Setter Target="PreviewLabelGrid.Margin" Value="20,200,20,200"/>
+                        
+                        <Setter Target="PreviewLabelGrid.MinWidth" Value="450"/>
+                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="600"/>
+                       
+                        <Setter Target="PreviewLabelGrid.MinHeight" Value="370"/>
+                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="470"/>
+
+                        <Setter Target="MainRow1.MinHeight" Value="600"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Phone">
@@ -57,8 +72,21 @@
                         <Setter Target="CreateLabelGridSettings.(Grid.Row)" Value="1"/>
                         <Setter Target="CreateLabelPreviewColumn.Width" Value="0"/>
                         <Setter Target="CreateLabelSettingsRow.Height" Value="1.7*"/>
+                        <Setter Target="CreateLabelGridPreview.MinHeight" Value="230"/>
                         <Setter Target="GridRowsTextBlocks.Margin" Value="5"/>
                         <Setter Target="NumberOfLinesComboBox.Width" Value="100"/>
+                        <Setter Target="PreviewGrid.(Grid.Column)" Value="0"/>
+                        <Setter Target="PreviewGrid.(Grid.Row)" Value="0"/>
+
+                        <Setter Target="PreviewLabelGrid.HorizontalAlignment" Value="Center"/>
+                        <Setter Target="PreviewLabelGrid.VerticalAlignment" Value="Top" />
+                        <Setter Target="PreviewLabelGrid.Margin" Value="20,5,20,5"/>
+
+                        <Setter Target="PreviewLabelGrid.MinWidth" Value="300"/>
+                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="450"/>
+
+                        <Setter Target="PreviewLabelGrid.MinHeight" Value="200"/>
+                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="250"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -69,7 +97,7 @@
 
         <Grid Name="CreateLabel" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition x:Name="CreateLabelPreviewColumn0" Width="*"/>
                 <ColumnDefinition x:Name="CreateLabelPreviewColumn" Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -80,16 +108,16 @@
 
             </Grid>
             <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,-218">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
                         
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Style="{StaticResource TextBlockSettings}" />
-                        <Slider Foreground="Black" Background="White" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Foreground="White" Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
+                        <Slider Value="0" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                        <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
                         <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
-                        <Slider Foreground="Black" Background="White" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Foreground="White" Width="40" Text="0" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0"/>
+                        <Slider Value="0" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                        <TextBlock Foreground="White" Width="40" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0" Text="{Binding Value, ElementName=ColumnSlider}"/>
                         
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -109,7 +137,16 @@
                                 <TextBlock Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Orientation="Vertical">
-                                <ComboBox Name="NumberOfLinesComboBox" Height="25" HorizontalAlignment="Right"/>
+                                <ComboBox Name="NumberOfLinesComboBox" Height="33" HorizontalAlignment="Right">
+                                    <ComboBoxItem Name="Combo0" Content="0" IsSelected="True"/>
+                                    <ComboBoxItem Name="Combo1" Content="1" />
+                                    <ComboBoxItem Name="Combo2" Content="2" />
+                                    <ComboBoxItem Name="Combo3" Content="3" />
+                                    <ComboBoxItem Name="Combo4" Content="4" />
+                                    <ComboBoxItem Name="Combo5" Content="5" />
+                                    <ComboBoxItem Name="Combo6" Content="6" />
+                                    <ComboBoxItem Name="Combo7" Content="7" />
+                                </ComboBox>
                                 <Button Name="Button1" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button2" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Name="Button3" Style="{StaticResource ButtonsSettings}"/>
@@ -123,6 +160,11 @@
                         </Grid>
                     </StackPanel>
                 </ScrollViewer>
+            </Grid>
+            <Grid Name="PreviewGrid">
+                <Grid Name="PreviewLabelGrid" Background="White">
+                    
+                </Grid>
             </Grid>
         </Grid>
     </Grid>
