@@ -23,6 +23,7 @@ namespace Label_v1
     public sealed partial class Screen2_CreateLabel : Page
     {
         double Rows, Column;
+        int varAddButton = 0;
         public Screen2_CreateLabel()
         {
             this.InitializeComponent();
@@ -41,6 +42,89 @@ namespace Label_v1
         private void closePopup(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void AddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (varAddButton == 0) {
+                SubButton.IsEnabled = true;
+                varAddButton++;
+                Textbox1.Visibility = Visibility.Visible;
+            }
+            else if (varAddButton == 1)
+            {
+                varAddButton++;
+                Textbox2.Visibility = Visibility.Visible;
+            }
+            else if (varAddButton == 2)
+            {
+                varAddButton++;
+                Textbox3.Visibility = Visibility.Visible;
+            }
+            else if (varAddButton == 3)
+            {
+                varAddButton++;
+                Textbox4.Visibility = Visibility.Visible;
+            }
+            else if (varAddButton == 4)
+            {
+                varAddButton++;
+                Textbox5.Visibility = Visibility.Visible;
+            }
+            else if (varAddButton == 5)
+            {
+                varAddButton++;
+                Textbox6.Visibility = Visibility.Visible;
+            }
+            else if (varAddButton == 6)
+            {
+                varAddButton++;
+                AddButton.IsEnabled = false;
+                Textbox7.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SubButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (varAddButton == 7) {
+                AddButton.IsEnabled = true;
+                varAddButton--;
+                Textbox7.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 6) {
+                varAddButton--;
+                Textbox6.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 5)
+            {
+                varAddButton--;
+                Textbox5.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 4)
+            {
+                varAddButton--;
+                Textbox4.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 3)
+            {
+                varAddButton--;
+                Textbox3.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 2)
+            {
+                varAddButton--;
+                Textbox2.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 1)
+            {
+                SubButton.IsEnabled = false;
+                varAddButton--;
+                Textbox1.Visibility = Visibility.Collapsed;
+            }
+            else if (varAddButton == 0)
+            {
+                SubButton.IsEnabled = false;
+            }
         }
 
         private void BackButtonClicked(object sender, RoutedEventArgs e)

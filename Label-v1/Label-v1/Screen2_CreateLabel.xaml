@@ -119,7 +119,7 @@
 
             </Grid>
             <Grid BorderThickness="4" BorderBrush="Gray" Background="#FFFFD587" Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto' Margin="4,4,4,-215">
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
                         <TextBox PlaceholderText="Label Name" Style="{StaticResource TextBoxSettings}"/>
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
@@ -134,21 +134,21 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Orientation="Vertical" Grid.Row="0">
-                                <TextBox Name="Textbox1" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox2" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox3" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox4" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox5" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox6" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox7" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox1" Visibility="Collapsed" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox2" Visibility="Collapsed" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox3" Visibility="Collapsed" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox4" Visibility="Collapsed" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox5" Visibility="Collapsed" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox6" Visibility="Collapsed" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox7" Visibility="Collapsed" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
                             </StackPanel>
                         </Grid>
                         <Grid>
-                            <Button Name="AddButton" Content="&#xE710;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
-                            <Button Name="SubButton" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Name="AddButton" Click="AddButtonClicked" Content="&#xE710;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Name="SubButton" Click="SubButtonClicked" IsEnabled="False" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
                         </Grid>
                         <Grid>
-                            <Button Content="&#xE713;" FontFamily="Segoe MDL2 Assets" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Content="More Settings" HorizontalAlignment="Center" Width="130" Style="{StaticResource ButtonsSettings}"/>
                         </Grid>
                         <Grid>
                             <Grid.ColumnDefinitions>
