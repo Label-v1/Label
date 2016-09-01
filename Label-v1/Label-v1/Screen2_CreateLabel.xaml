@@ -123,11 +123,11 @@
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
                         <TextBox PlaceholderText="Label Name" Style="{StaticResource TextBoxSettings}"/>
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
-                        <Slider Value="0" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                        <Slider Value="1" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" Minimum="1" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
                         <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
-                        <Slider Value="0" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                        <Slider Value="1" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" Minimum="1" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Foreground="White" Width="40" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0" Text="{Binding Value, ElementName=ColumnSlider}"/>
                         <Grid>
                             <Grid.ColumnDefinitions>

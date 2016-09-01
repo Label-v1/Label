@@ -22,26 +22,27 @@ namespace Label_v1
     /// </summary>
     public sealed partial class Screen2_CreateLabel : Page
     {
-        double Rows, Column;
+        //Variables
+
+        double varRows = 1, varColumn = 1;
         int varAddButton = 0;
+
+        //Main Function
         public Screen2_CreateLabel()
         {
             this.InitializeComponent();
         }
 
+
+        //Defualt Functions
         private void RowValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            
+            varRows = RowSlider.Value; 
         }
 
         private void ColumnValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-
-        }
-
-        private void closePopup(object sender, RoutedEventArgs e)
-        {
-
+            varColumn = ColumnSlider.Value;
         }
 
         private void AddButtonClicked(object sender, RoutedEventArgs e)
@@ -127,11 +128,18 @@ namespace Label_v1
             }
         }
 
+        private void closePopup(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void BackButtonClicked(object sender, RoutedEventArgs e)
         {
             if (Frame.CanGoBack) {
                 Frame.GoBack();
             }
         }
+
+        //Custom Functions
     }
 }
