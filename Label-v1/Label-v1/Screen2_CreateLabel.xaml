@@ -8,6 +8,17 @@
     mc:Ignorable="d">
 
     <Page.Resources>
+        <Style TargetType="TextBlock" x:Name="Textblocks">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="ComboBox" x:Name="ComboBoxStyle">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="10"/>
+        </Style>
+
         <Style TargetType="TextBlock" x:Name="TextBlockSettings">
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="Foreground" Value="White"/>
@@ -101,7 +112,6 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button Content="&#xE0A6;" FontFamily="Segoe MDL2 Assets" Click="BackButtonClicked" Margin="5,0,0,0" Background="Transparent" Style="{StaticResource ButtonsSettings}"/>
         </StackPanel>
-
         <Grid Name="CreateLabel" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="CreateLabelPreviewColumn0" Width="*"/>
@@ -115,52 +125,285 @@
 
             </Grid>
             <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto' Margin="4,4,4,-215">
-                    <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
-                        <TextBox Name="Textbox0" PlaceholderText="Label Name" TextChanged="LabelNameTextBoxChanged" Style="{StaticResource TextBoxSettings}"/>
-                        <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
-                        <Slider Value="1" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" Minimum="1" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
+                <ScrollViewer Name="CreateLabelSettingsScrollViewer" VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
+                    <Grid Visibility="Visible">
+                        <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
+                            <TextBox Name="Textbox0" PlaceholderText="Label Name" TextChanged="LabelNameTextBoxChanged" Style="{StaticResource TextBoxSettings}"/>
+                            <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
+                            <Slider Value="1" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" Minimum="1" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                            <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
-                        <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
-                        <Slider Value="1" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" Minimum="1" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
-                        <TextBlock Foreground="White" Width="40" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0" Text="{Binding Value, ElementName=ColumnSlider}"/>
+                            <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
+                            <Slider Value="1" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" Minimum="1" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
+                            <TextBlock Foreground="White" Width="40" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0" Text="{Binding Value, ElementName=ColumnSlider}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical" Grid.Row="0">
+                                    <TextBox Name="Textbox1" TextChanged="Textbox1Changed" Visibility="Collapsed" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
+                                    <TextBox Name="Textbox2" TextChanged="Textbox2Changed" Visibility="Collapsed" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
+                                    <TextBox Name="Textbox3" TextChanged="Textbox3Changed" Visibility="Collapsed" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
+                                    <TextBox Name="Textbox4" TextChanged="Textbox4Changed" Visibility="Collapsed" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
+                                    <TextBox Name="Textbox5" TextChanged="Textbox5Changed" Visibility="Collapsed" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
+                                    <TextBox Name="Textbox6" TextChanged="Textbox6Changed" Visibility="Collapsed" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
+                                    <TextBox Name="Textbox7" TextChanged="Textbox7Changed" Visibility="Collapsed" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Button Name="AddButton" Click="AddButtonClicked" Content="&#xE710;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Name="SubButton" Click="SubButtonClicked" IsEnabled="False" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
+                            </Grid>
+                            <Grid>
+                                <Button Content="More Settings" Click="MoreSettingsButton" HorizontalAlignment="Center" Width="130" Style="{StaticResource ButtonsSettings}"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Image:" Style="{StaticResource TextBlockSettings}"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
+                                <Button Content="&#xE12D;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="0" Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
+                                <Button Content="&#xEC1B;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="1" Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+                <ScrollViewer Name="MoreSettingsScrollView" Visibility="Visible" VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
+                    <Grid Background="#FF2E2D2E">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition x:Name="Row3" Height="50"/>
+                        </Grid.RowDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Desktop1">
+                                    <VisualState.StateTriggers>
+                                        <AdaptiveTrigger MinWindowWidth="800"/>
+                                    </VisualState.StateTriggers>
+                                    <VisualState.Setters>
+                                        <Setter Target="Column1.Width" Value="*"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Phone1">
+                                    <VisualState.StateTriggers>
+                                        <AdaptiveTrigger MinWindowWidth="0"/>
+                                    </VisualState.StateTriggers>
+                                    <VisualState.Setters>
+                                        <Setter Target="PopupColumn1.Width" Value="0"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Orientation="Vertical" Grid.Row="0">
-                                <TextBox Name="Textbox1" TextChanged="Textbox1Changed" Visibility="Collapsed" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox2" TextChanged="Textbox2Changed" Visibility="Collapsed" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox3" TextChanged="Textbox3Changed" Visibility="Collapsed" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox4" TextChanged="Textbox4Changed" Visibility="Collapsed" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox5" TextChanged="Textbox5Changed" Visibility="Collapsed" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox6" TextChanged="Textbox6Changed" Visibility="Collapsed" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox7" TextChanged="Textbox7Changed" Visibility="Collapsed" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
-                            </StackPanel>
-                        </Grid>
-                        <Grid>
-                            <Button Name="AddButton" Click="AddButtonClicked" Content="&#xE710;" FontFamily="Segoe MDL2 Assets"  HorizontalAlignment="Left" Style="{StaticResource ButtonsSettings}"/>
-                            <Button Name="SubButton" Click="SubButtonClicked" IsEnabled="False" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
-                        </Grid>
-                        <Grid>
-                            <Button Content="More Settings" Click="MoreSettingsButton" HorizontalAlignment="Center" Width="130" Style="{StaticResource ButtonsSettings}"/>
-                        </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn1" Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn2" Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn3" Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn4" Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn5" Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn6" Width="*"/>
+                                <ColumnDefinition x:Name="PopupColumn7" Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition x:Name="PopupRow1" Height="1.2*"/>
+                                <RowDefinition x:Name="PopupRow2" Height="*"/>
+                                <RowDefinition x:Name="PopupRow3" Height="*"/>
+                                <RowDefinition x:Name="PopupRow4" Height="*"/>
+                                <RowDefinition x:Name="PopupRow5" Height="*"/>
+                                <RowDefinition x:Name="PopupRow6" Height="*"/>
+                                <RowDefinition x:Name="PopupRow7" Height="*"/>
+                                <RowDefinition x:Name="PopupRow8" Height="*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Image:" Style="{StaticResource TextBlockSettings}"/>
-                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
-                            <Button Content="&#xE12D;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="0" Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
-                            <Button Content="&#xEC1B;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="1" Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+                                <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
+                                <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4">
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="5">
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="6">
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
+                                <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
+                            </StackPanel>
+
+                            <TextBlock VerticalAlignment="Center" Name="Stack1" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="1" Margin="2" Text="Line 1 :"/>
+                            <TextBlock VerticalAlignment="Center" Name="Stack2" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="2" Margin="2" Text="Line 2 :"/>
+                            <TextBlock VerticalAlignment="Center" Name="Stack3" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="3" Margin="2" Text="Line 3 :"/>
+                            <TextBlock VerticalAlignment="Center" Name="Stack4" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="4" Margin="2" Text="Line 4 :"/>
+                            <TextBlock VerticalAlignment="Center" Name="Stack5" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="5" Margin="2" Text="Line 5 :"/>
+                            <TextBlock VerticalAlignment="Center" Name="Stack6" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="6" Margin="2" Text="Line 6 :"/>
+                            <TextBlock VerticalAlignment="Center" Name="Stack7" Style="{StaticResource Textblocks}" Grid.Column="0" Grid.Row="7" Margin="2" Text="Line 7 :"/>
+
+                            <!--Text Alignment ComboBox-->
+                            
+                            <ComboBox Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="3" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="4" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="5" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="6" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="7" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left" />
+                                <ComboBoxItem Content="Right" />
+                            </ComboBox>
+                    
+                            <!--Font ComboBox-->
+
+                            <ComboBox Grid.Column="2" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+                                
+                            </ComboBox>
+                            <ComboBox Grid.Column="2" Grid.Row="2" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="2" Grid.Row="3" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="2" Grid.Row="4" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="2" Grid.Row="5" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="2" Grid.Row="6" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="2" Grid.Row="7" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <!--Left Margin ComboBox-->
+                            <ComboBox Grid.Column="3" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="3" Grid.Row="2" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="3" Grid.Row="3" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="3" Grid.Row="4" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="3" Grid.Row="5" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="3" Grid.Row="6" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="3" Grid.Row="7" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <!--Top Margin ComboBox-->
+                            <ComboBox Grid.Column="4" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="4" Grid.Row="2" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="4" Grid.Row="3" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="4" Grid.Row="4" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="4" Grid.Row="5" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="4" Grid.Row="6" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="4" Grid.Row="7" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <!--Right Margin ComboBox-->
+                            <ComboBox Grid.Column="5" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="5" Grid.Row="2" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="5" Grid.Row="3" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="5" Grid.Row="4" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="5" Grid.Row="5" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="5" Grid.Row="6" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="5" Grid.Row="7" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <!--Bottom Margin ComboBox-->
+                            <ComboBox Grid.Column="6" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="6" Grid.Row="2" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="6" Grid.Row="3" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="6" Grid.Row="4" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="6" Grid.Row="5" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="6" Grid.Row="6" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
+                            <ComboBox Grid.Column="6" Grid.Row="7" Style="{StaticResource ComboBoxStyle}">
+
+                            </ComboBox>
                         </Grid>
-                       </StackPanel>
+                        <Button Grid.Row="1" Click="MoreSettingsButtonSaved" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Content="Ok" Foreground="White" FontSize="15"/>
+                    </Grid>
                 </ScrollViewer>
             </Grid>
             <Grid Name="PreviewGrid">

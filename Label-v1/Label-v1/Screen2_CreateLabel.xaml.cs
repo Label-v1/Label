@@ -190,16 +190,24 @@ namespace Label_v1
             funcCreateRows();
         }
 
-        private void MoreSettingsButton(object sender, RoutedEventArgs e)
-        {
-            if (!MoreSettingsPopup.IsOpen) { MoreSettingsPopup.IsOpen = true; }
-        }
-
+        
         //Custom Functions
 
         void funcClearRows() {
             PreviewLabelGrid.Children.Clear();
             PreviewLabelGrid.RowDefinitions.Clear();
+        }
+
+        private void MoreSettingsButton(object sender, RoutedEventArgs e)
+        {
+            CreateLabelSettingsScrollViewer.Visibility = Visibility.Collapsed;
+            MoreSettingsScrollView.Visibility = Visibility.Visible;
+        }
+
+        private void MoreSettingsButtonSaved(object sender, RoutedEventArgs e)
+        {
+            MoreSettingsScrollView.Visibility = Visibility.Collapsed;
+            CreateLabelSettingsScrollViewer.Visibility = Visibility.Visible;
         }
 
         void funcCreateRows() {
