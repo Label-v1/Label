@@ -57,17 +57,16 @@
                         <Setter Target="PreviewLabelGrid.VerticalAlignment" Value="Top" />
                         <Setter Target="PreviewLabelGrid.Margin" Value="20,200,20,200"/>
                         
-                        <Setter Target="PreviewLabelGrid.MinWidth" Value="450"/>
-                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="600"/>
+                        <Setter Target="PreviewLabelGrid.MinWidth" Value="400"/>
+                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="500"/>
                        
-                        <Setter Target="PreviewLabelGrid.MinHeight" Value="370"/>
-                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="440"/>
+                        <Setter Target="PreviewLabelGrid.MinHeight" Value="275"/>
+                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="300"/>
 
                         <Setter Target="MainRow1.MinHeight" Value="600"/>
 
-                        <Setter Target="StandardPopup.HorizontalAlignment" Value="Stretch"/>
-                        <Setter Target="StandardPopup.VerticalAlignment" Value="Stretch"/>
-                        <Setter Target="StandardPopup.Margin" Value="100,70,100,70"/>
+                        <Setter Target="MoreSettingsPopup.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Target="MoreSettingsPopup.VerticalAlignment" Value="Stretch"/>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Phone">
@@ -89,15 +88,12 @@
                         <Setter Target="PreviewLabelGrid.VerticalAlignment" Value="Top" />
                         <Setter Target="PreviewLabelGrid.Margin" Value="20,5,20,5"/>
 
-                        <Setter Target="PreviewLabelGrid.MinWidth" Value="300"/>
-                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="450"/>
+                        <Setter Target="PreviewLabelGrid.MinWidth" Value="250"/>
+                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="350"/>
 
                         <Setter Target="PreviewLabelGrid.MinHeight" Value="200"/>
                         <Setter Target="PreviewLabelGrid.MaxHeight" Value="250"/>
-
-                        <Setter Target="StandardPopup.HorizontalAlignment" Value="Stretch"/>
-                        <Setter Target="StandardPopup.VerticalAlignment" Value="Stretch"/>
-                        <Setter Target="StandardPopup.Margin" Value="15,40,15,40"/>
+                        
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -118,10 +114,10 @@
             <Grid Name="CreateLabelGridPreview" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="150">
 
             </Grid>
-            <Grid BorderThickness="4" BorderBrush="Gray" Background="#FFFFD587" Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Name="CreateLabelGridSettings" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto' Margin="4,4,4,-215">
                     <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
-                        <TextBox PlaceholderText="Label Name" Style="{StaticResource TextBoxSettings}"/>
+                        <TextBox Name="Textbox0" PlaceholderText="Label Name" TextChanged="LabelNameTextBoxChanged" Style="{StaticResource TextBoxSettings}"/>
                         <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
                         <Slider Value="1" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" Minimum="1" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                         <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
@@ -134,13 +130,13 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Orientation="Vertical" Grid.Row="0">
-                                <TextBox Name="Textbox1" Visibility="Collapsed" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox2" Visibility="Collapsed" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox3" Visibility="Collapsed" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox4" Visibility="Collapsed" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox5" Visibility="Collapsed" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox6" Visibility="Collapsed" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
-                                <TextBox Name="Textbox7" Visibility="Collapsed" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox1" TextChanged="Textbox1Changed" Visibility="Collapsed" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox2" TextChanged="Textbox2Changed" Visibility="Collapsed" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox3" TextChanged="Textbox3Changed" Visibility="Collapsed" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox4" TextChanged="Textbox4Changed" Visibility="Collapsed" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox5" TextChanged="Textbox5Changed" Visibility="Collapsed" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox6" TextChanged="Textbox6Changed" Visibility="Collapsed" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
+                                <TextBox Name="Textbox7" TextChanged="Textbox7Changed" Visibility="Collapsed" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
                             </StackPanel>
                         </Grid>
                         <Grid>
@@ -148,7 +144,7 @@
                             <Button Name="SubButton" Click="SubButtonClicked" IsEnabled="False" Content="&#xE108;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Style="{StaticResource ButtonsSettings}"/>
                         </Grid>
                         <Grid>
-                            <Button Content="More Settings" HorizontalAlignment="Center" Width="130" Style="{StaticResource ButtonsSettings}"/>
+                            <Button Content="More Settings" Click="MoreSettingsButton" HorizontalAlignment="Center" Width="130" Style="{StaticResource ButtonsSettings}"/>
                         </Grid>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -173,14 +169,13 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Popup x:Name="StandardPopup">
+        <Popup x:Name="MoreSettingsPopup">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
                 BorderThickness="1">
-                <StackPanel Name="PopupStack" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Test Text"/>
-                    <Button Content="Close" Click="closePopup"/>
-                </StackPanel>
+                <Grid Margin="10" Name="PopupStack" HorizontalAlignment="Center" VerticalAlignment="Center">
+                
+                </Grid>
             </Border>
         </Popup>
     </Grid>
