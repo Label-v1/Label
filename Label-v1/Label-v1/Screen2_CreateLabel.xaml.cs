@@ -62,39 +62,146 @@ namespace Label_v1
         {
             if (label.varAddButton == 0) {
                 SubButton.IsEnabled = true;
+                MoreSettingsButton.IsEnabled = true;
                 label.varAddButton++;
+
                 Textbox1.Visibility = Visibility.Visible;
+
+                MoreSettingsLine1.Visibility = Visibility.Visible;
+                TextAlignment1.Visibility = Visibility.Visible;
+                FontStack1.Visibility = Visibility.Visible;
+                LeftMarginStack1.Visibility = Visibility.Visible;
+                TopMarginStack1.Visibility = Visibility.Visible;
+                RightMarginStack1.Visibility = Visibility.Visible;
+                BottomMarginStack1.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment1.Visibility = Visibility.Visible;
+                FontSliderStack1.Visibility = Visibility.Visible;
+                MarginSliderStack1.Visibility = Visibility.Visible;
+                MarginSliderStack2.Visibility = Visibility.Visible;
+                MarginSliderStack3.Visibility = Visibility.Visible;
+                MarginSliderStack4.Visibility = Visibility.Visible;
             }
             else if (label.varAddButton == 1)
             {
                 label.varAddButton++;
+
                 Textbox2.Visibility = Visibility.Visible;
+                MoreSettingsLine2.Visibility = Visibility.Visible;
+                TextAlignment2.Visibility = Visibility.Visible;
+                FontStack2.Visibility = Visibility.Visible;
+                LeftMarginStack2.Visibility = Visibility.Visible;
+                TopMarginStack2.Visibility = Visibility.Visible;
+                RightMarginStack2.Visibility = Visibility.Visible;
+                BottomMarginStack2.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment2.Visibility = Visibility.Visible;
+                FontSliderStack2.Visibility = Visibility.Visible;
+                MarginSliderStack5.Visibility = Visibility.Visible;
+                MarginSliderStack6.Visibility = Visibility.Visible;
+                MarginSliderStack7.Visibility = Visibility.Visible;
+                MarginSliderStack8.Visibility = Visibility.Visible;
             }
             else if (label.varAddButton == 2)
             {
                 label.varAddButton++;
+
                 Textbox3.Visibility = Visibility.Visible;
+                MoreSettingsLine3.Visibility = Visibility.Visible;
+                TextAlignment3.Visibility = Visibility.Visible;
+                FontStack3.Visibility = Visibility.Visible;
+                LeftMarginStack3.Visibility = Visibility.Visible;
+                TopMarginStack3.Visibility = Visibility.Visible;
+                RightMarginStack3.Visibility = Visibility.Visible;
+                BottomMarginStack3.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment3.Visibility = Visibility.Visible;
+                FontSliderStack3.Visibility = Visibility.Visible;
+                MarginSliderStack9.Visibility = Visibility.Visible;
+                MarginSliderStack10.Visibility = Visibility.Visible;
+                MarginSliderStack11.Visibility = Visibility.Visible;
+                MarginSliderStack12.Visibility = Visibility.Visible;
             }
             else if (label.varAddButton == 3)
             {
                 label.varAddButton++;
+
                 Textbox4.Visibility = Visibility.Visible;
+                MoreSettingsLine4.Visibility = Visibility.Visible;
+                TextAlignment4.Visibility = Visibility.Visible;
+                FontStack4.Visibility = Visibility.Visible;
+                LeftMarginStack4.Visibility = Visibility.Visible;
+                TopMarginStack4.Visibility = Visibility.Visible;
+                RightMarginStack4.Visibility = Visibility.Visible;
+                BottomMarginStack4.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment4.Visibility = Visibility.Visible;
+                FontSliderStack4.Visibility = Visibility.Visible;
+                MarginSliderStack13.Visibility = Visibility.Visible;
+                MarginSliderStack14.Visibility = Visibility.Visible;
+                MarginSliderStack15.Visibility = Visibility.Visible;
+                MarginSliderStack16.Visibility = Visibility.Visible;
             }
             else if (label.varAddButton == 4)
             {
                 label.varAddButton++;
+
                 Textbox5.Visibility = Visibility.Visible;
+                MoreSettingsLine5.Visibility = Visibility.Visible;
+                TextAlignment5.Visibility = Visibility.Visible;
+                FontStack5.Visibility = Visibility.Visible;
+                LeftMarginStack5.Visibility = Visibility.Visible;
+                TopMarginStack5.Visibility = Visibility.Visible;
+                RightMarginStack5.Visibility = Visibility.Visible;
+                BottomMarginStack5.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment5.Visibility = Visibility.Visible;
+                FontSliderStack5.Visibility = Visibility.Visible;
+                MarginSliderStack17.Visibility = Visibility.Visible;
+                MarginSliderStack18.Visibility = Visibility.Visible;
+                MarginSliderStack19.Visibility = Visibility.Visible;
+                MarginSliderStack20.Visibility = Visibility.Visible;
             }
             else if (label.varAddButton == 5)
             {
                 label.varAddButton++;
+
                 Textbox6.Visibility = Visibility.Visible;
+                MoreSettingsLine6.Visibility = Visibility.Visible;
+                TextAlignment6.Visibility = Visibility.Visible;
+                FontStack6.Visibility = Visibility.Visible;
+                LeftMarginStack6.Visibility = Visibility.Visible;
+                TopMarginStack6.Visibility = Visibility.Visible;
+                RightMarginStack6.Visibility = Visibility.Visible;
+                BottomMarginStack6.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment6.Visibility = Visibility.Visible;
+                FontSliderStack6.Visibility = Visibility.Visible;
+                MarginSliderStack21.Visibility = Visibility.Visible;
+                MarginSliderStack22.Visibility = Visibility.Visible;
+                MarginSliderStack23.Visibility = Visibility.Visible;
+                MarginSliderStack24.Visibility = Visibility.Visible;
             }
             else if (label.varAddButton == 6)
             {
                 label.varAddButton++;
                 AddButton.IsEnabled = false;
+
                 Textbox7.Visibility = Visibility.Visible;
+                MoreSettingsLine7.Visibility = Visibility.Visible;
+                TextAlignment7.Visibility = Visibility.Visible;
+                FontStack7.Visibility = Visibility.Visible;
+                LeftMarginStack7.Visibility = Visibility.Visible;
+                TopMarginStack7.Visibility = Visibility.Visible;
+                RightMarginStack7.Visibility = Visibility.Visible;
+                BottomMarginStack7.Visibility = Visibility.Visible;
+
+                ComboboxTextAlignment7.Visibility = Visibility.Visible;
+                FontSliderStack7.Visibility = Visibility.Visible;
+                MarginSliderStack25.Visibility = Visibility.Visible;
+                MarginSliderStack26.Visibility = Visibility.Visible;
+                MarginSliderStack27.Visibility = Visibility.Visible;
+                MarginSliderStack28.Visibility = Visibility.Visible;
             }
             funcCreateRows();
         }
@@ -105,40 +212,147 @@ namespace Label_v1
                 AddButton.IsEnabled = true;
                 label.varAddButton--;
                 Textbox7.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine7.Visibility = Visibility.Collapsed;
+                TextAlignment7.Visibility = Visibility.Collapsed;
+                FontStack7.Visibility = Visibility.Collapsed;
+                LeftMarginStack7.Visibility = Visibility.Collapsed;
+                TopMarginStack7.Visibility = Visibility.Collapsed;
+                RightMarginStack7.Visibility = Visibility.Collapsed;
+                BottomMarginStack7.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment7.Visibility = Visibility.Collapsed;
+                FontSliderStack7.Visibility = Visibility.Collapsed;
+                MarginSliderStack25.Visibility = Visibility.Collapsed;
+                MarginSliderStack26.Visibility = Visibility.Collapsed;
+                MarginSliderStack27.Visibility = Visibility.Collapsed;
+                MarginSliderStack28.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 6) {
                 label.varAddButton--;
                 Textbox6.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine6.Visibility = Visibility.Collapsed;
+                TextAlignment6.Visibility = Visibility.Collapsed;
+                FontStack6.Visibility = Visibility.Collapsed;
+                LeftMarginStack6.Visibility = Visibility.Collapsed;
+                TopMarginStack6.Visibility = Visibility.Collapsed;
+                RightMarginStack6.Visibility = Visibility.Collapsed;
+                BottomMarginStack6.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment6.Visibility = Visibility.Collapsed;
+                FontSliderStack6.Visibility = Visibility.Collapsed;
+                MarginSliderStack21.Visibility = Visibility.Collapsed;
+                MarginSliderStack22.Visibility = Visibility.Collapsed;
+                MarginSliderStack23.Visibility = Visibility.Collapsed;
+                MarginSliderStack24.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 5)
             {
                 label.varAddButton--;
                 Textbox5.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine5.Visibility = Visibility.Collapsed;
+                TextAlignment5.Visibility = Visibility.Collapsed;
+                FontStack5.Visibility = Visibility.Collapsed;
+                LeftMarginStack5.Visibility = Visibility.Collapsed;
+                TopMarginStack5.Visibility = Visibility.Collapsed;
+                RightMarginStack5.Visibility = Visibility.Collapsed;
+                BottomMarginStack5.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment5.Visibility = Visibility.Collapsed;
+                FontSliderStack5.Visibility = Visibility.Collapsed;
+                MarginSliderStack17.Visibility = Visibility.Collapsed;
+                MarginSliderStack18.Visibility = Visibility.Collapsed;
+                MarginSliderStack19.Visibility = Visibility.Collapsed;
+                MarginSliderStack20.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 4)
             {
                 label.varAddButton--;
                 Textbox4.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine4.Visibility = Visibility.Collapsed;
+                TextAlignment4.Visibility = Visibility.Collapsed;
+                FontStack4.Visibility = Visibility.Collapsed;
+                LeftMarginStack4.Visibility = Visibility.Collapsed;
+                TopMarginStack4.Visibility = Visibility.Collapsed;
+                RightMarginStack4.Visibility = Visibility.Collapsed;
+                BottomMarginStack4.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment4.Visibility = Visibility.Collapsed;
+                FontSliderStack4.Visibility = Visibility.Collapsed;
+                MarginSliderStack13.Visibility = Visibility.Collapsed;
+                MarginSliderStack14.Visibility = Visibility.Collapsed;
+                MarginSliderStack15.Visibility = Visibility.Collapsed;
+                MarginSliderStack16.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 3)
             {
                 label.varAddButton--;
                 Textbox3.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine3.Visibility = Visibility.Collapsed;
+                TextAlignment3.Visibility = Visibility.Collapsed;
+                FontStack3.Visibility = Visibility.Collapsed;
+                LeftMarginStack3.Visibility = Visibility.Collapsed;
+                TopMarginStack3.Visibility = Visibility.Collapsed;
+                RightMarginStack3.Visibility = Visibility.Collapsed;
+                BottomMarginStack3.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment3.Visibility = Visibility.Collapsed;
+                FontSliderStack3.Visibility = Visibility.Collapsed;
+                MarginSliderStack9.Visibility = Visibility.Collapsed;
+                MarginSliderStack10.Visibility = Visibility.Collapsed;
+                MarginSliderStack11.Visibility = Visibility.Collapsed;
+                MarginSliderStack12.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 2)
             {
                 label.varAddButton--;
                 Textbox2.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine2.Visibility = Visibility.Collapsed;
+                TextAlignment2.Visibility = Visibility.Collapsed;
+                FontStack2.Visibility = Visibility.Collapsed;
+                LeftMarginStack2.Visibility = Visibility.Collapsed;
+                TopMarginStack2.Visibility = Visibility.Collapsed;
+                RightMarginStack2.Visibility = Visibility.Collapsed;
+                BottomMarginStack2.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment2.Visibility = Visibility.Collapsed;
+                FontSliderStack2.Visibility = Visibility.Collapsed;
+                MarginSliderStack5.Visibility = Visibility.Collapsed;
+                MarginSliderStack6.Visibility = Visibility.Collapsed;
+                MarginSliderStack7.Visibility = Visibility.Collapsed;
+                MarginSliderStack8.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 1)
             {
                 SubButton.IsEnabled = false;
+                MoreSettingsButton.IsEnabled = false;
                 label.varAddButton--;
                 Textbox1.Visibility = Visibility.Collapsed;
+
+                MoreSettingsLine1.Visibility = Visibility.Collapsed;
+                TextAlignment1.Visibility = Visibility.Collapsed;
+                FontStack1.Visibility = Visibility.Collapsed;
+                LeftMarginStack1.Visibility = Visibility.Collapsed;
+                TopMarginStack1.Visibility = Visibility.Collapsed;
+                RightMarginStack1.Visibility = Visibility.Collapsed;
+                BottomMarginStack1.Visibility = Visibility.Collapsed;
+
+                ComboboxTextAlignment1.Visibility = Visibility.Collapsed;
+                FontSliderStack1.Visibility = Visibility.Collapsed;
+                MarginSliderStack1.Visibility = Visibility.Collapsed;
+                MarginSliderStack2.Visibility = Visibility.Collapsed;
+                MarginSliderStack3.Visibility = Visibility.Collapsed;
+                MarginSliderStack4.Visibility = Visibility.Collapsed;
             }
             else if (label.varAddButton == 0)
             {
                 SubButton.IsEnabled = false;
+                MoreSettingsButton.IsEnabled = false;
             }
             funcCreateRows();
         }
@@ -354,7 +568,7 @@ namespace Label_v1
 
 
 
-        private void MoreSettingsButton(object sender, RoutedEventArgs e)
+        private void MoreSettingsButtonClicked(object sender, RoutedEventArgs e)
         {
             CreateLabelSettingsScrollViewer.Visibility = Visibility.Collapsed;
             MoreSettingsScrollView.Visibility = Visibility.Visible;
