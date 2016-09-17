@@ -193,11 +193,6 @@ namespace Label_v1
         
         //Custom Functions
 
-        void funcClearRows() {
-            PreviewLabelGrid.Children.Clear();
-            PreviewLabelGrid.RowDefinitions.Clear();
-        }
-
         private void MoreSettingsButton(object sender, RoutedEventArgs e)
         {
             CreateLabelSettingsScrollViewer.Visibility = Visibility.Collapsed;
@@ -208,6 +203,46 @@ namespace Label_v1
         {
             MoreSettingsScrollView.Visibility = Visibility.Collapsed;
             CreateLabelSettingsScrollViewer.Visibility = Visibility.Visible;
+        }
+
+        private void FontSliderChanged1(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSliderChanged2(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSliderChanged3(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSliderChanged4(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSliderChanged5(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSliderChanged6(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+
+        private void FontSliderChanged7(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
+        void funcClearRows()
+        {
+            PreviewLabelGrid.Children.Clear();
+            PreviewLabelGrid.RowDefinitions.Clear();
         }
 
         void funcCreateRows() {
