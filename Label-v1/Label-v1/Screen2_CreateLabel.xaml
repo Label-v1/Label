@@ -454,37 +454,37 @@
 
                                 <!--Text Alignment ComboBox-->
 
-                                <ComboBox Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox1" Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
                                 </ComboBox>
-                                <ComboBox Grid.Column="1" Grid.Row="8" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox2" Grid.Column="1" Grid.Row="8" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
                                 </ComboBox>
-                                <ComboBox Grid.Column="1" Grid.Row="15" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox3" Grid.Column="1" Grid.Row="15" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
                                 </ComboBox>
-                                <ComboBox Grid.Column="1" Grid.Row="22" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox4" Grid.Column="1" Grid.Row="22" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
                                 </ComboBox>
-                                <ComboBox Grid.Column="1" Grid.Row="29" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox5" Grid.Column="1" Grid.Row="29" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
                                 </ComboBox>
-                                <ComboBox Grid.Column="1" Grid.Row="36" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox6" Grid.Column="1" Grid.Row="36" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
                                 </ComboBox>
-                                <ComboBox Grid.Column="1" Grid.Row="43" Style="{StaticResource ComboBoxStyle}">
+                                <ComboBox SelectionChanged="combobox7" Grid.Column="1" Grid.Row="43" Style="{StaticResource ComboBoxStyle}">
                                     <ComboBoxItem Content="Center" IsSelected="True"/>
                                     <ComboBoxItem Content="Left" />
                                     <ComboBoxItem Content="Right" />
@@ -522,115 +522,115 @@
 
                                 <!-- Margin -->
                                 <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider1" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged1" Name="MarginSlider1" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider1}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider2" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged2" Name="MarginSlider2" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider2}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider3" Style="{StaticResource MoreSettingsMarginSlider}" />
+                                    <Slider ValueChanged="MarginSliderchanged3" Name="MarginSlider3" Style="{StaticResource MoreSettingsMarginSlider}" />
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider3}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider4" Style="{StaticResource MoreSettingsMarginSlider}" />
+                                    <Slider ValueChanged="MarginSliderchanged4" Name="MarginSlider4" Style="{StaticResource MoreSettingsMarginSlider}" />
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider4}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="10" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider5" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged5" Name="MarginSlider5" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider5}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="11" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider6" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged6" Name="MarginSlider6" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider6}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="12" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider7" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged7" Name="MarginSlider7" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider7}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="13" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider8" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged8" Name="MarginSlider8" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider8}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="17" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider9" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged9" Name="MarginSlider9" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider9}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="18" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider10" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged10" Name="MarginSlider10" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider10}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="19" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider11" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged11" Name="MarginSlider11" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider11}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="20" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider12" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged12" Name="MarginSlider12" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider12}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="24" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider13" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged13" Name="MarginSlider13" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider13}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="25" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider14" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged14" Name="MarginSlider14" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider14}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="26" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider15" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged15" Name="MarginSlider15" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider15}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="27" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider16" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged16" Name="MarginSlider16" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider16}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="31" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider17" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged17" Name="MarginSlider17" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider17}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="32" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider18" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged18" Name="MarginSlider18" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider18}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="33" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider19" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged19" Name="MarginSlider19" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider19}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="34" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider20" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged20" Name="MarginSlider20" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider20}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="38" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlide21" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged21" Name="MarginSlider21" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider21}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="39" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider22" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged22" Name="MarginSlider22" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider22}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="40" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider23" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged23" Name="MarginSlider23" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider23}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="41" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider24" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged24" Name="MarginSlider24" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider24}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="45" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider25" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged25" Name="MarginSlider25" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider25}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="46" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider26" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged26" Name="MarginSlider26" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider26}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="47" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider27" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged27" Name="MarginSlider27" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider27}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Grid.Row="48" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="MarginSlider28" Style="{StaticResource MoreSettingsMarginSlider}"/>
+                                    <Slider ValueChanged="MarginSliderchanged28" Name="MarginSlider28" Style="{StaticResource MoreSettingsMarginSlider}"/>
                                     <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider28}"/>
                                 </StackPanel>
                             </Grid>
