@@ -8,71 +8,9 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <Style TargetType="TextBlock" x:Name="Textblocks">
-            <Setter Property="FontSize" Value="19"/>
+        <Style TargetType="TextBlock" x:Name="Textblock">
+            <Setter Property="FontSize" Value="27"/>
             <Setter Property="Foreground" Value="White"/>
-        </Style>
-
-        <Style TargetType="ComboBox" x:Name="ComboBoxStyle">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="10"/>
-            <Setter Property="Width" Value="150"/>
-        </Style>
-
-        <Style TargetType="Slider" x:Name="MoreSettingsMarginSlider">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Margin" Value="0,0,25,0" />
-            <Setter Property="Value" Value="0"/>
-            <Setter Property="StepFrequency" Value="1"/>
-            <Setter Property="Minimum" Value="1"/>
-            <Setter Property="Maximum" Value="50"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Name="MoreSettingsMargin">
-            <Setter Property="Width" Value="40"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Text" Value="0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Name="MoreSettingsFont">
-            <Setter Property="Width" Value="40"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Text" Value="20"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="Slider" x:Name="MoreSettingsSlider">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Margin" Value="0,0,25,0" />
-            <Setter Property="Value" Value="20"/>
-            <Setter Property="StepFrequency" Value="1"/>
-            <Setter Property="Minimum" Value="1"/>
-            <Setter Property="Maximum" Value="40"/>
-        </Style>
-        <Style TargetType="StackPanel" x:Name="MoreSettingsStackpanel">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Margin" Value="15" />
-        </Style>
-        <Style TargetType="TextBlock" x:Name="TextBlockSettings">
-            <Setter Property="FontSize" Value="25"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Height" Value="33" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontWeight" Value="SemiBold" />
-        </Style>
-        <Style TargetType="TextBox" x:Name="TextBoxSettings">
-            <Setter Property="Margin" Value="10,10,10,0"/>
-            <Setter Property="TextAlignment" Value="Left"/>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style TargetType="Button" x:Name="ButtonsSettings">
             <Setter Property="Margin" Value="10,10,10,0"/>
@@ -170,26 +108,20 @@
                 <ScrollViewer Visibility="Visible" Name="CreateLabelSettingsScrollViewer" VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
                     <Grid>
                         <StackPanel Name="ColumnAndRowStack" Orientation="Vertical">
-                            <TextBox Name="Textbox0" PlaceholderText="Label Name" TextChanged="LabelNameTextBoxChanged" Style="{StaticResource TextBoxSettings}"/>
-                            <TextBlock Name="GridRowsTextBlocks" Text="Rows:" Margin="0,10,0,0" Style="{StaticResource TextBlockSettings}" />
+                            <TextBox Name="Textbox0" PlaceholderText="Label Name" TextChanged="LabelNameTextBoxChanged" Margin="10"/>
+                            <TextBlock Name="GridRowsTextBlocks" Text="Rows on Page:" Margin="0,10,0,0" Style="{StaticResource Textblock}" />
                             <Slider Value="1" Foreground="Black" Name="RowSlider" ValueChanged="RowValueChanged" Background="White" Minimum="1" StepFrequency="1" Maximum="15" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                             <TextBlock Foreground="White" Width="40" Text="{Binding Value, ElementName=RowSlider}" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right" Height="40" Margin="0,2,50,0"/>
 
-                            <TextBlock Name="GridCloumnsTextBlocks" Text="Columns:" Style="{StaticResource TextBlockSettings}" />
+                            <TextBlock Name="GridCloumnsTextBlocks" Text="Columns on Page:" Style="{StaticResource Textblock}" />
                             <Slider Value="1" Foreground="Black" Name="ColumnSlider" Background="White" ValueChanged="ColumnValueChanged" Minimum="1" StepFrequency="1" Maximum="10" HorizontalAlignment="Stretch"  Margin="50,3,50,0" />
                             <TextBlock Foreground="White" Width="40" TextAlignment="Center" FontSize="20" HorizontalAlignment="Right"  Height="40" Margin="0,2,50,0" Text="{Binding Value, ElementName=ColumnSlider}"/>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Vertical" Grid.Row="0">
-                                    <TextBox Name="Textbox1" TextChanged="Textbox1Changed" Visibility="Collapsed" PlaceholderText="Enter Line 1"  Style="{StaticResource TextBoxSettings}"/>
-                                    <TextBox Name="Textbox2" TextChanged="Textbox2Changed" Visibility="Collapsed" PlaceholderText="Enter Line 2"  Style="{StaticResource TextBoxSettings}"/>
-                                    <TextBox Name="Textbox3" TextChanged="Textbox3Changed" Visibility="Collapsed" PlaceholderText="Enter Line 3"  Style="{StaticResource TextBoxSettings}"/>
-                                    <TextBox Name="Textbox4" TextChanged="Textbox4Changed" Visibility="Collapsed" PlaceholderText="Enter Line 4"  Style="{StaticResource TextBoxSettings}"/>
-                                    <TextBox Name="Textbox5" TextChanged="Textbox5Changed" Visibility="Collapsed" PlaceholderText="Enter Line 5"  Style="{StaticResource TextBoxSettings}"/>
-                                    <TextBox Name="Textbox6" TextChanged="Textbox6Changed" Visibility="Collapsed" PlaceholderText="Enter Line 6"  Style="{StaticResource TextBoxSettings}"/>
-                                    <TextBox Name="Textbox7" TextChanged="Textbox7Changed" Visibility="Collapsed" PlaceholderText="Enter Line 7"  Style="{StaticResource TextBoxSettings}"/>
+                                <StackPanel Name="StackTextBox" Orientation="Vertical" Grid.Row="0">
+
                                 </StackPanel>
                             </Grid>
                             <Grid>
@@ -208,8 +140,8 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Image:" Style="{StaticResource TextBlockSettings}"/>
-                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Barcode:" Style="{StaticResource TextBlockSettings}"/>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Image:" Style="{StaticResource Textblock}"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Barcode:" Style="{StaticResource Textblock}"/>
                                 <Button Content="&#xE12D;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="0" Name="ImageButton8" Style="{StaticResource ButtonsSettings}"/>
                                 <Button Content="&#xEC1B;" FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="1" Name="BarcodeButton8" Style="{StaticResource ButtonsSettings}"/>
                             </Grid>
@@ -217,432 +149,16 @@
                     </Grid>
                 </ScrollViewer>
                 <ScrollViewer Name="MoreSettingsScrollView" Visibility="Collapsed" VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
-                    <StackPanel>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="50"/>
-                            </Grid.RowDefinitions>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:Name="PopupColumn1" Width="0.3*"/>
-                                    <ColumnDefinition x:Name="PopupColumn2" Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-                                    <RowDefinition  Height="0.4*"/>
-
-                                </Grid.RowDefinitions>
-
-                                <TextBlock Name="MoreSettingsLine1" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="0" Margin="2" Text="Line 1 :"/>
-                                <TextBlock Name="MoreSettingsLine2" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="7" Margin="2" Text="Line 2 :"/>
-                                <TextBlock Name="MoreSettingsLine3" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="14" Margin="2" Text="Line 3 :"/>
-                                <TextBlock Name="MoreSettingsLine4" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="21" Margin="2" Text="Line 4 :"/>
-                                <TextBlock Name="MoreSettingsLine5" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="28" Margin="2" Text="Line 5 :"/>
-                                <TextBlock Name="MoreSettingsLine6" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="35" Margin="2" Text="Line 6 :"/>
-                                <TextBlock Name="MoreSettingsLine7" Visibility="Collapsed" VerticalAlignment="Center" Style="{StaticResource Textblocks}" FontSize="30" Grid.Column="0" Grid.Row="42" Margin="2" Text="Line 7 :"/>
-
-                                <StackPanel Name="TextAlignment1" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="1">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack1" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="2">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack1" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="3">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack1" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="4">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack1" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="5">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack1" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="6">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-
-                                <StackPanel Name="TextAlignment2" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="8">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack2" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="9">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack2" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="10">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack2" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="11">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack2" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="12">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack2" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="13">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TextAlignment3" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="15">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack3" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="16">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack3" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="17">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack3" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="18">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack3" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="19">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack3" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="20">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TextAlignment4" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="22">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack4" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="23">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack4" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="24">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack4" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="25">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack4" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="26">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack4" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="27">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TextAlignment5" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="29">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack5" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="30">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack5" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="31">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack5" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="32">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack5" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="33">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack5" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="34">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TextAlignment6" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="36">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack6" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="37">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack6" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="38">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack6" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="39">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack6" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="40">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack6" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="41">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TextAlignment7" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="43">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Text"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text=" Alignment"/>
-                                </StackPanel>
-                                <StackPanel Name="FontStack7" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="44">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Font"/>
-                                </StackPanel>
-                                <StackPanel Name="LeftMarginStack7" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="45">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Left"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="TopMarginStack7" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="46">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Top"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="RightMarginStack7" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="47">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Right"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-                                <StackPanel Name="BottomMarginStack7" Visibility="Collapsed" Style="{StaticResource MoreSettingsStackpanel}" Grid.Row="48">
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Bottom"/>
-                                    <TextBlock Style="{StaticResource Textblocks}" Text="Margin"/>
-                                </StackPanel>
-
-                                <!--Text Alignment ComboBox-->
-
-                                <ComboBox Name="ComboboxTextAlignment1" Visibility="Collapsed" SelectionChanged="combobox1" Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-                                <ComboBox Name="ComboboxTextAlignment2" Visibility="Collapsed" SelectionChanged="combobox2" Grid.Column="1" Grid.Row="8" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-                                <ComboBox Name="ComboboxTextAlignment3" Visibility="Collapsed" SelectionChanged="combobox3" Grid.Column="1" Grid.Row="15" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-                                <ComboBox Name="ComboboxTextAlignment4" Visibility="Collapsed" SelectionChanged="combobox4" Grid.Column="1" Grid.Row="22" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-                                <ComboBox Name="ComboboxTextAlignment5" Visibility="Collapsed" SelectionChanged="combobox5" Grid.Column="1" Grid.Row="29" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-                                <ComboBox Name="ComboboxTextAlignment6" Visibility="Collapsed" SelectionChanged="combobox6" Grid.Column="1" Grid.Row="36" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-                                <ComboBox Name="ComboboxTextAlignment7" Visibility="Collapsed" SelectionChanged="combobox7" Grid.Column="1" Grid.Row="43" Style="{StaticResource ComboBoxStyle}">
-                                    <ComboBoxItem Content="Center" IsSelected="True"/>
-                                    <ComboBoxItem Content="Left" />
-                                    <ComboBoxItem Content="Right" />
-                                </ComboBox>
-
-                                <!-- Font Slider-->
-                                <StackPanel Name="FontSliderStack1" Visibility="Collapsed" Grid.Column="1" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider1" ValueChanged="FontSliderChanged1"  Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider1}" />
-                                </StackPanel>
-                                <StackPanel Name="FontSliderStack2" Visibility="Collapsed" Grid.Column="1" Grid.Row="9" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider2" ValueChanged="FontSliderChanged2" Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider2}"/>
-                                </StackPanel>
-                                <StackPanel Name="FontSliderStack3" Visibility="Collapsed" Grid.Column="1" Grid.Row="16" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider3" ValueChanged="FontSliderChanged3" Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider3}"/>
-                                </StackPanel>
-                                <StackPanel Name="FontSliderStack4" Visibility="Collapsed" Grid.Column="1" Grid.Row="23" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider4" ValueChanged="FontSliderChanged4" Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider4}"/>
-                                </StackPanel>
-                                <StackPanel Name="FontSliderStack5" Visibility="Collapsed" Grid.Column="1" Grid.Row="30" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider5" ValueChanged="FontSliderChanged5" Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider5}"/>
-                                </StackPanel>
-                                <StackPanel Name="FontSliderStack6" Visibility="Collapsed" Grid.Column="1" Grid.Row="37" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider6" ValueChanged="FontSliderChanged6" Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider6}"/>
-                                </StackPanel>
-                                <StackPanel Name="FontSliderStack7" Visibility="Collapsed" Grid.Column="1" Grid.Row="44" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider Name="FontSlider7" ValueChanged="FontSliderChanged7" Style="{StaticResource MoreSettingsSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsFont}" Text="{Binding Value, ElementName=FontSlider7}"/>
-                                </StackPanel>
-
-                                <!-- Margin -->
-                                <StackPanel Name="MarginSliderStack1" Visibility="Collapsed" Grid.Column="1" Grid.Row="3" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged1" Name="MarginSlider1" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider1}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack2" Visibility="Collapsed" Grid.Column="1" Grid.Row="4" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged2" Name="MarginSlider2" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider2}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack3" Visibility="Collapsed" Grid.Column="1" Grid.Row="5" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged3" Name="MarginSlider3" Style="{StaticResource MoreSettingsMarginSlider}" />
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider3}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack4" Visibility="Collapsed" Grid.Column="1" Grid.Row="6" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged4" Name="MarginSlider4" Style="{StaticResource MoreSettingsMarginSlider}" />
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider4}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack5" Visibility="Collapsed" Grid.Column="1" Grid.Row="10" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged5" Name="MarginSlider5" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider5}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack6" Visibility="Collapsed" Grid.Column="1" Grid.Row="11" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged6" Name="MarginSlider6" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider6}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack7" Visibility="Collapsed" Grid.Column="1" Grid.Row="12" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged7" Name="MarginSlider7" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider7}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack8" Visibility="Collapsed" Grid.Column="1" Grid.Row="13" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged8" Name="MarginSlider8" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider8}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack9" Visibility="Collapsed" Grid.Column="1" Grid.Row="17" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged9" Name="MarginSlider9" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider9}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack10" Visibility="Collapsed" Grid.Column="1" Grid.Row="18" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged10" Name="MarginSlider10" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider10}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack11" Visibility="Collapsed" Grid.Column="1" Grid.Row="19" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged11" Name="MarginSlider11" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider11}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack12" Visibility="Collapsed" Grid.Column="1" Grid.Row="20" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged12" Name="MarginSlider12" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider12}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack13" Visibility="Collapsed" Grid.Column="1" Grid.Row="24" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged13" Name="MarginSlider13" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider13}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack14" Visibility="Collapsed" Grid.Column="1" Grid.Row="25" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged14" Name="MarginSlider14" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider14}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack15" Visibility="Collapsed" Grid.Column="1" Grid.Row="26" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged15" Name="MarginSlider15" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider15}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack16" Visibility="Collapsed" Grid.Column="1" Grid.Row="27" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged16" Name="MarginSlider16" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider16}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack17" Visibility="Collapsed" Grid.Column="1" Grid.Row="31" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged17" Name="MarginSlider17" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider17}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack18" Visibility="Collapsed" Grid.Column="1" Grid.Row="32" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged18" Name="MarginSlider18" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider18}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack19" Visibility="Collapsed" Grid.Column="1" Grid.Row="33" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged19" Name="MarginSlider19" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider19}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack20" Visibility="Collapsed" Grid.Column="1" Grid.Row="34" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged20" Name="MarginSlider20" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider20}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack21" Visibility="Collapsed" Grid.Column="1" Grid.Row="38" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged21" Name="MarginSlider21" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider21}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack22" Visibility="Collapsed" Grid.Column="1" Grid.Row="39" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged22" Name="MarginSlider22" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider22}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack23" Visibility="Collapsed" Grid.Column="1" Grid.Row="40" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged23" Name="MarginSlider23" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider23}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack24" Visibility="Collapsed" Grid.Column="1" Grid.Row="41" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged24" Name="MarginSlider24" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider24}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack25" Visibility="Collapsed" Grid.Column="1" Grid.Row="45" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged25" Name="MarginSlider25" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider25}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack26" Visibility="Collapsed" Grid.Column="1" Grid.Row="46" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged26" Name="MarginSlider26" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider26}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack27" Visibility="Collapsed" Grid.Column="1" Grid.Row="47" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged27" Name="MarginSlider27" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider27}"/>
-                                </StackPanel>
-                                <StackPanel Name="MarginSliderStack28" Visibility="Collapsed" Grid.Column="1" Grid.Row="48" Orientation="Vertical" VerticalAlignment="Center">
-                                    <Slider ValueChanged="MarginSliderchanged28" Name="MarginSlider28" Style="{StaticResource MoreSettingsMarginSlider}"/>
-                                    <TextBlock Style="{StaticResource MoreSettingsMargin}" Text="{Binding Value, ElementName=MarginSlider28}"/>
-                                </StackPanel>
-                            </Grid>
-                            <Button Grid.Row="1" Click="MoreSettingsButtonSaved" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Content="Ok" Foreground="White" FontSize="15"/>
-                        </Grid>
-                    </StackPanel>
+                    <RelativePanel Name="MoreSettingsRelative">
+                        
+                    </RelativePanel>
                 </ScrollViewer>
-                
             </Grid>
             <Grid Name="PreviewGrid">
                 <Grid BorderThickness="2" BorderBrush="Gray" Name="PreviewLabelGrid" Background="White">
-                    
+                    <RelativePanel Name="PreviewRelativeLabel">
+
+                    </RelativePanel>
                 </Grid>
             </Grid>
         </Grid>
