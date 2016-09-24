@@ -10,16 +10,14 @@ namespace Label_v1
     {
         public int varAddButton = 0;
         public double[] ArrRowColumn = new double[2] {1,1}; 
-        public string[] ArrText;
-        public double[] ArrTextFont;
-        public double[] ArrTextLeftMargin;
-        public double[] ArrTextTopMargin;
-        public double[] ArrTextRightMargin;
-        public double[] ArrTextBottomMargin;
-        public double[] ArrTextHorizontalAlignMargin;
-        public double[] ArrTextVerticalAlignMargin;
-        public double[] ArrTextWidth;
-        public double[] ArrTextHeight;
+        public List<string> ArrText = new List<string>();
+        public List<double> ArrTextFont = new List<double>();
+        public List<double> ArrTextLeftMargin = new List<double>();
+        public List<double> ArrTextTopMargin = new List<double>();
+        public List<double> ArrTextRightMargin = new List<double>();
+        public List<double> ArrTextBottomMargin = new List<double>();
+        public List<double> ArrTextHorizontalAlignMargin = new List<double>();
+        public List<double> ArrTextVerticalAlignMargin = new List<double>();
         public string TextFont = "Arial";
     }
 }

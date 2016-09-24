@@ -139,12 +139,33 @@ namespace Label_v1
                 var textbox = new TextBox();
                 textbox.Name = "TextBox" + label.varAddButton;
                 textbox.TextChanged += Textbox_TextChanged;
-                textbox.HorizontalAlignment = HorizontalAlignment.Stretch;
-                textbox.VerticalAlignment = VerticalAlignment.Stretch;
                 textbox.PlaceholderText = "Enter Text Line " + (label.varAddButton + 1);
                 textbox.Margin = new Thickness(10);
                 textbox.Foreground = new SolidColorBrush(Colors.Black);
                 textbox.TextAlignment = TextAlignment.Left;
+                textbox.FontSize = 15;
+                textbox.FontFamily = new FontFamily("Arial");
+            
+            var button = new Button();
+            button.Name = "Button" + label.varAddButton;
+            button.FontFamily = new FontFamily("Segoe MDL2 Assets");
+            button.Content = char.ConvertFromUtf32(0xE106);
+            button.Margin = new Thickness(0,10,10,10);
+            button.Foreground = new SolidColorBrush(Colors.White);
+            button.Width = 32;
+            button.Height = 32;
+
+                label.ArrTextHorizontalAlignMargin.Insert(label.varAddButton, 0);
+                label.ArrTextVerticalAlignMargin.Insert(label.varAddButton, 0);
+                label.ArrTextLeftMargin.Insert(label.varAddButton,0);
+                label.ArrTextRightMargin.Insert(label.varAddButton, 0);
+                label.ArrTextTopMargin.Insert(label.varAddButton, 0);
+                label.ArrTextBottomMargin.Insert(label.varAddButton, 0);
+                label.ArrTextFont.Insert(label.varAddButton, 15);
+                label.TextFont = "Arial";
+                label.ArrText.Insert(label.varAddButton, "Text Line " + (label.varAddButton + 1));
+
+            StackButton.Children.Add(button);
 
             StackTextBox.Children.Add(textbox);
         }
@@ -156,77 +177,64 @@ namespace Label_v1
 
         private void Textbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var textbox = (sender as TextBox);
-            string temp = textbox.Name.Substring(textbox.Name.Length - 1);
-            int TextboxNum = Convert.ToInt32(temp);
+            try
+            {
+                int TextboxNum;
+                var textbox = (sender as TextBox);
+                if (label.varAddButton >= 11)
+                {
+                    string temp = textbox.Name.Substring(textbox.Name.Length - 2);
+                    TextboxNum = Convert.ToInt32(temp);
+                }
+                else
+                {
+                    string temp = textbox.Name.Substring(textbox.Name.Length - 1);
+                    TextboxNum = Convert.ToInt32(temp);
+                }
 
-            label.ArrText[TextboxNum] = textbox.Text;
 
-            funcCreateLabel();
+                label.ArrText[TextboxNum] = textbox.Text;
+
+                funcCreateLabel();
+            }
+            catch
+            {
+
+            }
         }
         
         void funcCreateLabel() {
             funcClearLabel();
             for(int i=0; i<label.varAddButton; i++)
-            {   
+            {
                 var textblock = new TextBlock();
-                textblock.Width = label.ArrTextWidth[i];
-                textblock.Height = label.ArrTextWidth[i];
                 textblock.FontSize = label.ArrTextFont[i];
                 textblock.FontFamily = new FontFamily(label.TextFont);
+                textblock.Foreground = new SolidColorBrush(Colors.Black);
                 textblock.Margin = new Thickness(label.ArrTextLeftMargin[i], label.ArrTextTopMargin[i], label.ArrTextRightMargin[i], label.ArrTextBottomMargin[i]);
+                textblock.Text = label.ArrText[i];
 
                 if (label.ArrTextHorizontalAlignMargin[i] == 0) textblock.HorizontalAlignment = HorizontalAlignment.Center;
                 else if (label.ArrTextHorizontalAlignMargin[i] == 1) textblock.HorizontalAlignment = HorizontalAlignment.Left;
                 else if (label.ArrTextHorizontalAlignMargin[i] == 2) textblock.HorizontalAlignment = HorizontalAlignment.Right;
+
                 if (label.ArrTextVerticalAlignMargin[i] == 0) textblock.VerticalAlignment = VerticalAlignment.Center;
                 else if (label.ArrTextVerticalAlignMargin[i] == 1) textblock.VerticalAlignment = VerticalAlignment.Top;
                 else if (label.ArrTextVerticalAlignMargin[i] == 2) textblock.VerticalAlignment = VerticalAlignment.Bottom;
-
-                PreviewRelativeLabel.Children.Add(textblock);
+                
+                PreviewLabelGrid.Children.Add(textblock);
+                
             }
             
         }
-        void funcCreateMoreSettings()
-        {
-            var stack = new StackPanel();
-            stack.Name = "MainStackMoreSettings" + label.varAddButton;
-            stack.HorizontalAlignment = HorizontalAlignment.Stretch;
-            stack.VerticalAlignment = VerticalAlignment.Stretch;
-            PreviewRelativeLabel.Children.Add(stack);
-
-            
-            var stack1 = new StackPanel();
-            stack1.Orientation = Orientation.Horizontal;
-            
-            var textblock1 = new TextBlock();
-            textblock1.FontSize = 27;
-            textblock1.Text = "Line 1";
-            stack1.Children.Add(textblock1);
-
-            var stack2 = new StackPanel();
-            stack2.Orientation = Orientation.Horizontal;
-
-            var textblock2 = new TextBlock();
-            textblock2.FontSize = 15;
-            textblock1.Text = "Width";
-            stack2.Children.Add(textblock1);
-
-            var slider1 = new Slider();
-
-        }
-        void funcRemoveMoreSettings()
-        {
-            PreviewRelativeLabel.Children.RemoveAt(label.varAddButton - 1);
-        }
-
+        /*
         void comboboxCheck(object sender , int number)
         {
             var comboBox = sender as ComboBox;
             if ((comboBox.SelectedItem as ComboBoxItem).Content.ToString() == "Center") label.ArrTextAlignMargin[number] = 0;
             else if ((comboBox.SelectedItem as ComboBoxItem).Content.ToString() == "Left") label.ArrTextAlignMargin[number] = 1;
             else if ((comboBox.SelectedItem as ComboBoxItem).Content.ToString() == "Right") label.ArrTextAlignMargin[number] = 2;
-        }
+        }*/
 
    }
 }
