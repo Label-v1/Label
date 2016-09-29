@@ -26,17 +26,24 @@ namespace Label_v1
         //Variables
         Label label = new Label();
         int selectedIndex;
+        bool validState = false;
         string[] allFonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFamilies();
         //Main Function
         public Screen2_CreateLabel()
         {
             this.InitializeComponent();
+            validState = true;
+            foreach(string x in allFonts)
+            {
+                ComboboxFonts.Items.Add(x);
+            }
         }
 
 
         //Defualt Functions
         private void RowValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
+            if (!validState) return;
             try
             {
                 label.ArrRowColumn[0] = RowSlider.Value;
@@ -49,7 +56,7 @@ namespace Label_v1
 
         private void ColumnValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-
+            if (!validState) return;
             try
             {
                 label.ArrRowColumn[1] = ColumnSlider.Value;
@@ -62,6 +69,7 @@ namespace Label_v1
 
         private void AddButtonClicked(object sender, RoutedEventArgs e)
         {
+            if (!validState) return;
             try
             {
                 funcCreateTextbox();
@@ -81,6 +89,7 @@ namespace Label_v1
 
         private void SubButtonClicked(object sender, RoutedEventArgs e)
         {
+            if (!validState) return;
             try
             {
                 funcRemoveTextbox();
@@ -105,12 +114,14 @@ namespace Label_v1
 
         private void BackButtonClicked(object sender, RoutedEventArgs e)
         {
+            if (!validState) return;
             if (Frame.CanGoBack) {
                 Frame.GoBack();
             }
         }
         private void LabelNameTextBoxChanged(object sender, TextChangedEventArgs e)
         {
+            if (!validState) return;
             try
             {
                 label.ArrText[0] = Textbox0.Text;
@@ -125,6 +136,7 @@ namespace Label_v1
 
         private void MoreSettingsButtonClicked(object sender, RoutedEventArgs e)
         {
+            if (!validState) return;
             CreateLabelSettingsScrollViewer.Visibility = Visibility.Collapsed;
             MoreSettingsScrollView.Visibility = Visibility.Visible;
 
@@ -135,89 +147,128 @@ namespace Label_v1
                 x.BorderBrush = new SolidColorBrush(Colors.DarkGray);
             }
         }
-        int NotToRunAtStartup = 8;
 
         private void MoveLeftSliderChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if(NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-               --NotToRunAtStartup;
-                return;
+                label.ArrTextRightMargin[selectedIndex] = MoveLeftSlider.Value;
+                funcCreateLabel();
+            }
+            catch
+            {
+
             }
         }
 
         private void MoveBottomSliderChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                label.ArrTextTopMargin[selectedIndex] = MoveBottomSlider.Value;
+                funcCreateLabel();
+            }
+            catch
+            {
+
             }
         }
 
         private void MoveUpSliderChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                label.ArrTextBottomMargin[selectedIndex] = MoveUpSlider.Value;
+                funcCreateLabel();
+            }
+            catch
+            {
+
             }
         }
 
         private void MoveRightSLiderChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                label.ArrTextLeftMargin[selectedIndex] = MoveRightSlider.Value;
+                funcCreateLabel();
+            }
+            catch
+            {
+
             }
         }
 
         private void SliderFontSizeChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                label.ArrTextFont[selectedIndex] = SliderFontSize.Value;
+                funcCreateLabel();
+            }
+            catch
+            {
+
             }
         }
         private void XAlignmentChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                if ((XAlignment.SelectedItem as ComboBoxItem).Content.ToString() == "Center") label.ArrTextHorizontalAlignMargin[selectedIndex] = 0;
+                else if ((XAlignment.SelectedItem as ComboBoxItem).Content.ToString() == "Left") label.ArrTextHorizontalAlignMargin[selectedIndex] = 1;
+                else if ((XAlignment.SelectedItem as ComboBoxItem).Content.ToString() == "Right") label.ArrTextHorizontalAlignMargin[selectedIndex] = 2;
+                funcCreateLabel();
             }
-            var combobox = sender as ComboBox;
-            if ((combobox.SelectedItem as ComboBoxItem).Content.ToString() == "Center") label.ArrTextHorizontalAlignMargin[selectedIndex] = 0;
-            else if ((combobox.SelectedItem as ComboBoxItem).Content.ToString() == "Left") label.ArrTextHorizontalAlignMargin[selectedIndex] = 1;
-            else if ((combobox.SelectedItem as ComboBoxItem).Content.ToString() == "Right") label.ArrTextHorizontalAlignMargin[selectedIndex] = 2;
+            catch
+            {
 
-            funcCreateLabel();
+            }
         }
 
         private void YAlignmentChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                if ((YAlignment.SelectedItem as ComboBoxItem).Content.ToString() == "Center") label.ArrTextVerticalAlignMargin[selectedIndex] = 0;
+                else if ((YAlignment.SelectedItem as ComboBoxItem).Content.ToString() == "Top") label.ArrTextVerticalAlignMargin[selectedIndex] = 1;
+                else if ((YAlignment.SelectedItem as ComboBoxItem).Content.ToString() == "Bottom") label.ArrTextVerticalAlignMargin[selectedIndex] = 2;
+                funcCreateLabel();
+            }
+            catch
+            {
+
             }
         }
 
 
         private void ComboboxFontsChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (NotToRunAtStartup > 0)
+            if (!validState) return;
+            try
             {
-                --NotToRunAtStartup;
-                return;
+                label.ArrTextFontFamily[selectedIndex] = ComboboxFonts.SelectedItem.ToString();
+                funcCreateLabel();
             }
+            catch
+            {
+
+            }
+           
         }
 
 
         private void MoreSettingsOkClicked(object sender, RoutedEventArgs e)
         {
+            if (!validState) return;
             CreateLabelSettingsScrollViewer.Visibility = Visibility.Visible;
             MoreSettingsScrollView.Visibility = Visibility.Collapsed;
 
@@ -245,12 +296,14 @@ namespace Label_v1
 
         void funcClearLabel()
         {
+            if (!validState) return;
             PreviewLabelGrid.Children.Clear();
         }
 
         void funcCreateTextbox()
         {
-                var textbox = new TextBox();
+            if (!validState) return;
+            var textbox = new TextBox();
                 textbox.Name = label.varAddButton.ToString();
                 textbox.TextChanged += Textbox_TextChanged;
                 textbox.PlaceholderText = "Enter Text Line " + (label.varAddButton + 1);
@@ -287,6 +340,7 @@ namespace Label_v1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (!validState) return;
             var button = sender as Button;
             int num = Convert.ToInt32(button.Name);
             StackButton.Children.RemoveAt(num);
@@ -322,12 +376,14 @@ namespace Label_v1
 
         void funcRemoveTextbox()
         {
+            if (!validState) return;
             StackTextBox.Children.RemoveAt(label.varAddButton - 1);
             StackButton.Children.RemoveAt(label.varAddButton - 1);
         }
 
         private void Textbox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (!validState) return;
             try
             {
                 var textbox = (sender as TextBox);
@@ -341,6 +397,7 @@ namespace Label_v1
         }
         
         void funcCreateLabel() {
+            if (!validState) return;
             funcClearLabel();
             for(int i=0; i<label.varAddButton; i++)
             {
@@ -373,8 +430,11 @@ namespace Label_v1
 
         private void Textblock_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            if (!validState) return;
             try
             {
+                validState = false;
+
                 var textblock = sender as TextBlock;
                 selectedIndex = Convert.ToInt32(textblock.Name);
 
@@ -391,23 +451,23 @@ namespace Label_v1
                 SliderFontSize.IsEnabled = true;
                 ComboboxFonts.IsEnabled = true;
 
-                if (textblock.HorizontalAlignment == HorizontalAlignment.Center) XAlignment.SelectedValuePath = "Center";
-                else if (textblock.HorizontalAlignment == HorizontalAlignment.Left) XAlignment.SelectedValuePath = "Left";
-                else if (textblock.HorizontalAlignment == HorizontalAlignment.Right) XAlignment.SelectedValuePath = "Right";
+                ComboboxFonts.SelectedIndex = ComboboxFonts.Items.IndexOf(label.ArrTextFontFamily[selectedIndex]);
 
-                if (textblock.VerticalAlignment == VerticalAlignment.Center) YAlignment.SelectedValuePath = "Center";
-                else if (textblock.VerticalAlignment == VerticalAlignment.Top) YAlignment.SelectedValuePath = "Top";
-                else if (textblock.VerticalAlignment == VerticalAlignment.Bottom) YAlignment.SelectedValuePath = "Bottom";
+                if (label.ArrTextHorizontalAlignMargin[selectedIndex] == 0) XAlignment.SelectedIndex = 0;
+                else if (label.ArrTextHorizontalAlignMargin[selectedIndex] == 1) XAlignment.SelectedIndex = 1;
+                else if (label.ArrTextHorizontalAlignMargin[selectedIndex] == 2) XAlignment.SelectedIndex = 2;
 
-                MoveUpSlider.Value = textblock.Margin.Bottom;
-                MoveLeftSlider.Value = textblock.Margin.Right;
-                MoveRightSlider.Value = textblock.Margin.Left;
-                MoveBottomSlider.Value = textblock.Margin.Top;
+                if (label.ArrTextVerticalAlignMargin[selectedIndex] == 0) YAlignment.SelectedIndex = 0;
+                else if (label.ArrTextVerticalAlignMargin[selectedIndex] == 1) YAlignment.SelectedIndex = 1;
+                else if (label.ArrTextVerticalAlignMargin[selectedIndex] == 2) YAlignment.SelectedIndex = 2;
 
-                SliderFontSize.Value = textblock.FontSize;
+                MoveUpSlider.Value = label.ArrTextBottomMargin[selectedIndex];
+                MoveLeftSlider.Value = label.ArrTextRightMargin[selectedIndex];
+                MoveRightSlider.Value = label.ArrTextLeftMargin[selectedIndex];
+                MoveBottomSlider.Value = label.ArrTextTopMargin[selectedIndex];
 
-                ComboboxFonts.ItemsSource = allFonts;
-                ComboboxFonts.SelectedValuePath = textblock.FontFamily.ToString();
+                SliderFontSize.Value = label.ArrTextFont[selectedIndex];
+                validState = true;
             }
             catch
             {
@@ -415,15 +475,5 @@ namespace Label_v1
             }
             
         }
-        
-        /*
-void comboboxCheck(object sender , int number)
-{
-var comboBox = sender as ComboBox;
-if ((comboBox.SelectedItem as ComboBoxItem).Content.ToString() == "Center") label.ArrTextAlignMargin[number] = 0;
-else if ((comboBox.SelectedItem as ComboBoxItem).Content.ToString() == "Left") label.ArrTextAlignMargin[number] = 1;
-else if ((comboBox.SelectedItem as ComboBoxItem).Content.ToString() == "Right") label.ArrTextAlignMargin[number] = 2;
-}*/
-
     }
 }
