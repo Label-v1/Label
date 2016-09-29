@@ -18,6 +18,6 @@ namespace Label_v1
         public List<double> ArrTextBottomMargin = new List<double>();
         public List<double> ArrTextHorizontalAlignMargin = new List<double>();
         public List<double> ArrTextVerticalAlignMargin = new List<double>();
-        public string TextFont = "Arial";
+        public List<string> ArrTextFontFamily = new List<string>();
     }
 }

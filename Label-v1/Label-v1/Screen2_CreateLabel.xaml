@@ -153,9 +153,64 @@
                     </Grid>
                 </ScrollViewer>
                 <ScrollViewer Name="MoreSettingsScrollView" Visibility="Collapsed" VerticalScrollBarVisibility="Hidden" VerticalScrollMode='Auto'>
-                    <RelativePanel Name="MoreSettingsRelative">
-                        
-                    </RelativePanel>
+                    <StackPanel>
+                        <StackPanel Margin="20" Name="StackStatusTextBlock">
+                            <TextBlock Name="StatusTextBlock" Text="Select a Text Block" FontSize="35" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource Textblock}"/>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="X Alignment" FontSize="17" Margin="10" Style="{StaticResource Textblock}" Grid.Row="0"/>
+                            <TextBlock Text="Y Alignment" FontSize="17" Margin="10" Style="{StaticResource Textblock}" Grid.Row="1"/>
+                            <TextBlock Text="Move" FontSize="17" Margin="10" Style="{StaticResource Textblock}" Grid.Row="3"/>
+                            <TextBlock Text="Font Size" FontSize="17" Margin="10" Style="{StaticResource Textblock}" Grid.Row="5"/>
+                            <TextBlock Text="Fonts" FontSize="17" Margin="10" Style="{StaticResource Textblock}" Grid.Row="6"/>
+
+                            <ComboBox Name="XAlignment" IsEnabled="False" SelectionChanged="XAlignmentChanged" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" MinWidth="200">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Left"/>
+                                <ComboBoxItem Content="Right"/>
+                            </ComboBox>
+                            <ComboBox IsEnabled="False" Name="YAlignment" SelectionChanged="YAlignmentChanged" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" MinWidth="200">
+                                <ComboBoxItem Content="Center" IsSelected="True"/>
+                                <ComboBoxItem Content="Top"/>
+                                <ComboBoxItem Content="Bottom"/>
+                            </ComboBox>
+                            <Slider IsEnabled="False" Name="MoveUpSlider" ValueChanged="MoveUpSliderChanged" Grid.Column="1" Grid.Row="2" Orientation="Vertical" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Value="0" Minimum="0" Maximum="100" StepFrequency="1" Margin="0,10,0,10"/>
+                            <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Text="{Binding Value, ElementName=MoveUpSlider}" Width="40" Height="40" Foreground="White" TextAlignment="Center" FontSize="20" Margin="70,0,0,0"/>
+                            <Grid  Grid.Column="1" Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                    <Slider IsEnabled="False" IsDirectionReversed="True" Name="MoveLeftSlider" Orientation="Horizontal" ValueChanged="MoveLeftSliderChanged" Value="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Minimum="0" Maximum="100" StepFrequency="1" Margin="50,10,10,10"/>
+                                    <TextBlock Name="MoveLeftTextBlock" Width="40" Height="40" HorizontalAlignment="Left" Text="{Binding Value, ElementName=MoveLeftSlider}" FontSize="20" Foreground="White" TextAlignment="Center"/>
+                                   
+                                    <Slider IsEnabled="False" Name="MoveRightSlider" ValueChanged="MoveRightSLiderChanged" Grid.Column="1" Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Value="0" Minimum="0" Maximum="100" StepFrequency="1" MinWidth="250" Margin="10,10,50,10"/>
+                                    <TextBlock Grid.Column="1" Width="40" Height="40" HorizontalAlignment="Right" Text="{Binding Value, ElementName=MoveRightSlider}" FontSize="20" Foreground="White" TextAlignment="Center"/>
+                            </Grid>
+                            <Slider IsEnabled="False" IsDirectionReversed="True" Name="MoveBottomSlider" ValueChanged="MoveBottomSliderChanged" Value="0" Orientation="Vertical" Height="100" Grid.Column="1" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center"  Minimum="0" Maximum="100" StepFrequency="1" Margin="0,10,0,10"/>
+                            <TextBlock Name="MoveBottomTextBlock" Grid.Column="1" Grid.Row="4" Width="40" Height="40" Text="{Binding Value,ElementName=MoveBottomSlider}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" Foreground="White" TextAlignment="Center" Margin="70,0,0,0"/>
+                            <Slider IsEnabled="False" Name="SliderFontSize" ValueChanged="SliderFontSizeChanged" Minimum="0" Value="15" Maximum="70" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,50,0" />
+                            <TextBlock Grid.Column="1" Grid.Row="5" Width="40" Height="40" HorizontalAlignment="Right" VerticalAlignment="Center" Text="{Binding Value, ElementName=SliderFontSize}" FontSize="20" Foreground="White" TextAlignment="Center"/>
+                            <ComboBox IsEnabled="False" SelectionChanged="ComboboxFontsChanged" Name="ComboboxFonts" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" MinWidth="200">
+                                
+                            </ComboBox>
+                            <Button Click="MoreSettingsOkClicked" Width="100" Content="OK" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Right" Margin="0,20,50,20" Foreground="White" FontSize="20" />
+                        </Grid>
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
             <Grid Name="PreviewGrid">
