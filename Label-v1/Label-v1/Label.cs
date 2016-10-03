@@ -24,12 +24,8 @@ namespace Label_v1
         public ObservableCollection<double> ImageWidth = new ObservableCollection<double>();
         public ObservableCollection<double> ImageHeight = new ObservableCollection<double>();
         public ObservableCollection<string> ImageFileName = new ObservableCollection<string>();
-        public ObservableCollection<double> ImageHorizontalAlignment = new ObservableCollection<double>();
-        public ObservableCollection<double> ImageVerticalAlignment = new ObservableCollection<double>();
         public ObservableCollection<double> ImageStretchAlignment = new ObservableCollection<double>();
         public ObservableCollection<double> ImageLeftMargin = new ObservableCollection<double>();
         public ObservableCollection<double> ImageTopMargin = new ObservableCollection<double>();
-        public ObservableCollection<double> ImageRightMargin = new ObservableCollection<double>();
-        public ObservableCollection<double> ImageBottomMargin = new ObservableCollection<double>();
     }
 }

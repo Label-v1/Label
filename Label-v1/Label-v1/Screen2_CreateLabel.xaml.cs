@@ -303,16 +303,9 @@ namespace Label_v1
                 image.Source = label.ImageBitmap[i];
                 image.Width = label.ImageWidth[i];
                 image.Height = label.ImageHeight[i];
-                image.Margin = new Thickness(label.ImageLeftMargin[i], label.ImageTopMargin[i], label.ImageRightMargin[i], label.ImageBottomMargin[i]);
-                image.Tapped += Image_Tapped;
-                if (label.ImageHorizontalAlignment[i] == 0) image.HorizontalAlignment = HorizontalAlignment.Center;
-                else if (label.ImageHorizontalAlignment[i] == 1) image.HorizontalAlignment = HorizontalAlignment.Left;
-                else if (label.ImageHorizontalAlignment[i] == 2) image.HorizontalAlignment = HorizontalAlignment.Right;
-
-                if (label.ImageVerticalAlignment[i] == 0) image.VerticalAlignment = VerticalAlignment.Center;
-                else if (label.ImageVerticalAlignment[i] == 1) image.VerticalAlignment = VerticalAlignment.Top;
-                else if (label.ImageVerticalAlignment[i] == 2) image.VerticalAlignment = VerticalAlignment.Bottom;
-
+                image.Margin = new Thickness(label.ImageLeftMargin[i], label.ImageTopMargin[i], 0, 0);
+                image.Tapped += Image_Tapped;image.HorizontalAlignment = HorizontalAlignment.Left;
+                image.VerticalAlignment = VerticalAlignment.Top;
                 if (label.ImageStretchAlignment[i] == 0) image.Stretch = Stretch.None;
                 else if (label.ImageStretchAlignment[i] == 1) image.Stretch = Stretch.Fill;
                 else if (label.ImageStretchAlignment[i] == 2) image.Stretch = Stretch.Uniform;
@@ -436,14 +429,10 @@ namespace Label_v1
                     label.ImageBitmap.Add(bitmapImage);
                     label.ImageWidth.Add(70);
                     label.ImageHeight.Add(70);
-                    label.ImageHorizontalAlignment.Add(0);
-                    label.ImageVerticalAlignment.Add(0);
                     label.ImageStretchAlignment.Add(2);
                     label.ImageLeftMargin.Add(0);
                     label.ImageTopMargin.Add(0);
-                    label.ImageRightMargin.Add(0);
-                    label.ImageBottomMargin.Add(0);
-
+                 
                     imageValid = true;
                     funcCreateLabel();
                 }
