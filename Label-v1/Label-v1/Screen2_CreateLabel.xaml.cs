@@ -419,6 +419,7 @@ namespace Label_v1
                         else if (marginX >= 0 && marginY >= 0) textblock.Margin = new Thickness(marginX, marginY, 0, 0);
                         label.ArrTextLeftMargin[Convert.ToInt32(textblock.Name)] = textblock.Margin.Left;
                         label.ArrTextTopMargin[Convert.ToInt32(textblock.Name)] = textblock.Margin.Top;
+
             }
             catch
             {
