@@ -30,7 +30,7 @@
         </Grid.RowDefinitions>
 
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="VisualStateGroup">
+            <VisualStateGroup CurrentStateChanged="StateChangedOfUI" x:Name="VisualStateGroup">
                 <VisualState x:Name="Desktop">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -46,14 +46,9 @@
 
                         <Setter Target="PreviewLabelGrid.HorizontalAlignment" Value="Center"/>
                         <Setter Target="PreviewLabelGrid.VerticalAlignment" Value="Top" />
-                        <Setter Target="PreviewLabelGrid.Margin" Value="20,200,20,200"/>
-                        
-                        <Setter Target="PreviewLabelGrid.MinWidth" Value="400"/>
-                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="500"/>
-                       
-                        <Setter Target="PreviewLabelGrid.MinHeight" Value="275"/>
-                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="300"/>
-
+                        <Setter Target="PreviewLabelGrid.Width" Value="500"/>
+                        <Setter Target="PreviewLabelGrid.Height" Value="300"/>
+                        <Setter Target="PreviewLabelGrid.Margin" Value="0,200,20,0"/>
                         <Setter Target="MainRow1.MinHeight" Value="600"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -66,22 +61,16 @@
                         <Setter Target="CreateLabelGridPreview.(Grid.Row)" Value="0"/>
                         <Setter Target="CreateLabelGridSettings.(Grid.Row)" Value="1"/>
                         <Setter Target="CreateLabelPreviewColumn.Width" Value="0"/>
-                        <Setter Target="CreateLabelSettingsRow.Height" Value="1.7*"/>
-                        <Setter Target="CreateLabelGridPreview.MinHeight" Value="230"/>
+                        <Setter Target="CreateLabelSettingsRow.Height" Value="1.2*"/>
                         <Setter Target="GridRowsTextBlocks.Margin" Value="5"/>
                         <Setter Target="PreviewGrid.(Grid.Column)" Value="0"/>
                         <Setter Target="PreviewGrid.(Grid.Row)" Value="0"/>
 
                         <Setter Target="PreviewLabelGrid.HorizontalAlignment" Value="Center"/>
                         <Setter Target="PreviewLabelGrid.VerticalAlignment" Value="Top" />
-                        <Setter Target="PreviewLabelGrid.Margin" Value="20,5,20,5"/>
-
-                        <Setter Target="PreviewLabelGrid.MinWidth" Value="250"/>
-                        <Setter Target="PreviewLabelGrid.MaxWidth" Value="350"/>
-
-                        <Setter Target="PreviewLabelGrid.MinHeight" Value="200"/>
-                        <Setter Target="PreviewLabelGrid.MaxHeight" Value="250"/>
-                        
+                        <Setter Target="PreviewLabelGrid.Margin" Value="0,20,0,0"/>
+                        <Setter Target="PreviewLabelGrid.Width" Value="350"/>
+                        <Setter Target="PreviewLabelGrid.Height" Value="210"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

@@ -209,17 +209,50 @@ namespace Label_v1
             button.Width = 32;
             button.Height = 32;
 
-                label.ArrTextLeftMargin.Insert(label.varAddButton,0);
-                label.ArrTextTopMargin.Insert(label.varAddButton, 0);
-                label.ArrTextFont.Insert(label.varAddButton, 15);
-                label.ArrTextFontFamily.Insert(label.varAddButton,"Arial");
-                label.ArrText.Insert(label.varAddButton, "Text Line " + (label.varAddButton + 1));
+            int rnd = RandomGenerator(0);
+            int check = 0;
+            foreach (double x in label.ArrTextLeftMargin)
+            {
+                while (check == 0)
+                {
+                    if ((x + 20) <= rnd || (x - 20) >= rnd) break;
+                    else rnd = RandomGenerator(0);
+                }
+            }
+            label.ArrTextLeftMargin.Insert(label.varAddButton, rnd);
+            rnd = RandomGenerator(1);
+            foreach (double x in label.ArrTextTopMargin)
+            {
+                while (check == 0)
+                {
+                    if((x + 20) <= rnd || (x - 20) >= rnd) break;
+                    else rnd = RandomGenerator(1);
+                }
+            }
+            label.ArrTextTopMargin.Insert(label.varAddButton, rnd);
+            label.ArrTextFont.Insert(label.varAddButton, 15);
+            label.ArrTextFontFamily.Insert(label.varAddButton,"Arial");
+            label.ArrText.Insert(label.varAddButton, "Text Line " + (label.varAddButton + 1));
 
             StackButton.Children.Add(button);
 
             StackTextBox.Children.Add(textbox);
         }
-
+        private int RandomGenerator(int x)
+        {
+            Random rnd = new Random();
+            if(x == 0)
+            {
+                int leftMargin = rnd.Next((int)PreviewLabelGrid.ActualWidth/2 - 1);
+                return leftMargin;
+            }
+            else if(x == 1)
+            {
+                int topMargin = rnd.Next((int)PreviewLabelGrid.ActualHeight - 1);
+                return topMargin;
+            }
+            return 0;         
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!validState) return;
@@ -391,6 +424,35 @@ namespace Label_v1
             {
 
             }
+        }
+
+        private void StateChangedOfUI(object sender, VisualStateChangedEventArgs e)
+        {
+         
+            double phoneWidth = 350;
+            double phoneHeight = 210;
+            double desktopWidth = 500;
+            double desktopHeight = 300;
+            if(Window.Current.Bounds.Width >= 800)
+            {
+                for(int i = 0; i<label.ArrTextLeftMargin.Count; i++)
+                {
+                    label.ArrTextLeftMargin[i] = (desktopWidth / phoneWidth) * label.ArrTextLeftMargin[i];
+                    label.ArrTextTopMargin[i] = (desktopHeight / phoneHeight) * label.ArrTextTopMargin[i];
+                    label.ArrTextFont[i] = (desktopHeight * desktopWidth) / (phoneHeight * phoneWidth) * label.ArrTextFont[i];
+                }
+                
+            }
+            else if(Window.Current.Bounds.Width > 0)
+            {
+                for (int i = 0; i < label.ArrTextLeftMargin.Count; i++)
+                {
+                    label.ArrTextLeftMargin[i] = (phoneWidth / desktopWidth) * label.ArrTextLeftMargin[i];
+                    label.ArrTextTopMargin[i] = (phoneHeight / desktopHeight) * label.ArrTextTopMargin[i];
+                    label.ArrTextFont[i] = (phoneHeight * phoneWidth) / (desktopHeight * desktopWidth) * label.ArrTextFont[i];
+                }
+            }
+            funcCreateLabel();
         }
 
         private void Image_Tapped(object sender, TappedRoutedEventArgs e)
